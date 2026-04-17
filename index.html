@@ -1286,6 +1286,64 @@
       ? '0 2px 20px rgba(26,56,41,.1)'
       : 'none';
   });
+
+  // ── FRINGE REMOVAL ──
+  // Processa pixels semi-transparentes brancos (borda do recorte Photoshop)
+  // e os funde com a cor do fundo verde escuro para sumir o halo branco.
+  function removeFringe(img) {
+    try {
+      const cvs = document.createElement('canvas');
+      cvs.width  = img.naturalWidth;
+      cvs.height = img.naturalHeight;
+      const ctx  = cvs.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+
+      const imgData = ctx.getImageData(0, 0, cvs.width, cvs.height);
+      const d = imgData.data;
+
+      // Cor do fundo: --green-deep #142b1e
+      const bgR = 20, bgG = 43, bgB = 30;
+
+      for (let i = 0; i < d.length; i += 4) {
+        const r = d[i], g = d[i+1], b = d[i+2], a = d[i+3];
+
+        // Só mexe em pixels semi-transparentes (bordas do recorte)
+        if (a > 0 && a < 254) {
+          const bright = (r * 0.299 + g * 0.587 + b * 0.114); // luminância
+          const t = a / 255; // 0 = totalmente transp, 1 = opaco
+
+          if (bright > 160) {
+            // Pixel brilhante na borda = halo branco → funde pro verde
+            const strength = 1 - t * 0.4; // quanto mais transparente, mais funde
+            d[i]   = Math.round(bgR + (r - bgR) * (1 - strength));
+            d[i+1] = Math.round(bgG + (g - bgG) * (1 - strength));
+            d[i+2] = Math.round(bgB + (b - bgB) * (1 - strength));
+            d[i+3] = Math.round(a * (t < 0.5 ? 0.4 : 0.75));
+          } else {
+            // Borda normal → pré-multiplica com fundo (remove fringe padrão)
+            d[i]   = Math.round(r * t + bgR * (1 - t));
+            d[i+1] = Math.round(g * t + bgG * (1 - t));
+            d[i+2] = Math.round(b * t + bgB * (1 - t));
+          }
+        }
+      }
+
+      ctx.putImageData(imgData, 0, 0);
+      img.src = cvs.toDataURL('image/png');
+    } catch(e) {
+      // Silencioso: se CORS bloquear, mantém imagem original
+      console.warn('Fringe fix skipped:', e.message);
+    }
+  }
+
+  const heroImg = document.querySelector('.hero-photo img');
+  if (heroImg) {
+    if (heroImg.complete && heroImg.naturalWidth) {
+      removeFringe(heroImg);
+    } else {
+      heroImg.addEventListener('load', () => removeFringe(heroImg));
+    }
+  }
 </script>
 </body>
 </html>
