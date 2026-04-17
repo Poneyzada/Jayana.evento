@@ -252,19 +252,16 @@
           transparent 62%);
     }
 
-    /* Vinheta radial — escurece bordas, ilumina centro */
+    /* Vinheta — só escurece as bordas laterais, não cobre o corpo */
     .photo-vignette{
       position:absolute;
       inset:0;z-index:2;pointer-events:none;
       background:
-        radial-gradient(ellipse 55% 70% at 50% 45%,
-          transparent 40%,
-          rgba(20,43,30,.75) 100%),
         linear-gradient(to right,
-          rgba(20,43,30,.8) 0%,
-          transparent 25%,
-          transparent 75%,
-          rgba(20,43,30,.8) 100%);
+          rgba(20,43,30,.85) 0%,
+          transparent 20%,
+          transparent 80%,
+          rgba(20,43,30,.85) 100%);
     }
 
     /* Brilho dourado atrás da pessoa */
