@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O Despertar do Dinheiro Rápido | Jayana Financeiro</title>
+  <meta name="description" content="Desbloqueio Espiritual, emocional e mental para romper o ciclo da escassez. Ao vivo, 03 de maio às 09h. Garanta sua vaga por R$27."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,500&family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+    :root{
+      /* ── VERDE GOLF ── */
+      --green-deep:   #142b1e;
+      --green:        #1a3829;
+      --green-mid:    #22503a;
+      --green-light:  #2d6849;
+      --green-subtle: rgba(26,56,41,.08);
+      --green-border: rgba(26,56,41,.18);
+
+      /* ── DOURADO ── */
+      --gold:         #b8862a;
+      --gold-mid:     #c9a04a;
+      --gold-light:   #dbb968;
+      --gold-bright:  #f0d48a;
+      --gold-subtle:  rgba(184,134,42,.1);
+      --gold-border:  rgba(184,134,42,.25);
+
+      /* ── FUNDO CLARO ── */
+      --bg:           #f8f6f0;
+      --bg-warm:      #f2efe8;
+      --bg-card:      #ffffff;
+      --bg-section:   #eeebe2;
+
+      /* ── TEXTO ── */
+      --text:         #1a1a1a;
+      --text-soft:    #3d3d3d;
+      --text-muted:   #7a7a72;
+      --white:        #ffffff;
+    }
+
+    html{scroll-behavior:auto;}
+
+    body{
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    /* Noise texture premium */
+    body::after{
+      content:'';
+      position:fixed;inset:0;z-index:9999;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:.025;
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(248,246,240,.94);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--green-border);
+      padding:0 40px;height:64px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .topbar-logo{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.2rem;font-style:italic;font-weight:600;
+      color:var(--green);letter-spacing:.04em;white-space:nowrap;
+    }
+    .topbar-info{
+      display:flex;align-items:center;gap:28px;
+      font-size:.75rem;color:var(--text-muted);
+    }
+    .topbar-info span{display:flex;align-items:center;gap:6px;}
+    .topbar-info strong{color:var(--text);}
+    .topbar-live{
+      display:flex;align-items:center;gap:8px;
+      background:var(--green);
+      border-radius:100px;
+      padding:9px 22px;
+      font-size:.72rem;font-weight:700;letter-spacing:.1em;
+      color:var(--white);text-transform:uppercase;white-space:nowrap;
+      text-decoration:none;
+      transition:filter .15s;
+    }
+    .topbar-live:hover{filter:brightness(1.12);}
+    .topbar-live:active{filter:brightness(.9);}
+    .live-dot{
+      width:7px;height:7px;border-radius:50%;
+      background:var(--gold-light);
+      animation:livePulse 1.8s infinite;
+    }
+    @keyframes livePulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
+
+    /* ─── HERO ─── */
+    .hero-wrap{
+      background:var(--green-deep);
+      padding-top:64px;
+      position:relative;overflow:hidden;
+    }
+    .hero-wrap::before{
+      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(184,134,42,.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(45,104,73,.4) 0%, transparent 50%);
+      pointer-events:none;
+    }
+    .hero{
+      max-width:1200px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 1fr;
+      min-height:calc(100vh - 64px);
+      position:relative;z-index:1;
+    }
+    .hero-copy{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:70px 50px 70px 50px;
+    }
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      background:rgba(184,134,42,.15);
+      border:1px solid rgba(184,134,42,.3);
+      border-radius:100px;padding:8px 20px;
+      font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--gold-light);margin-bottom:28px;width:fit-content;
+    }
+    .hero-title{
+      font-family:'Montserrat',sans-serif;
+      font-size:clamp(1.8rem,3vw,2.9rem);
+      font-weight:900;line-height:1.12;
+      text-transform:uppercase;color:var(--white);
+      margin-bottom:16px;letter-spacing:-.01em;
+    }
+    .hero-title .gold-text{
+      background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      display:block;
+    }
+    .hero-sub{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.15rem;font-style:italic;font-weight:300;
+      color:rgba(255,255,255,.75);
+      margin-bottom:28px;max-width:460px;line-height:1.8;
+    }
+    .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+    .hero-bullets li{
+      display:flex;align-items:flex-start;gap:12px;
+      font-size:.88rem;line-height:1.6;color:rgba(255,255,255,.85);
+    }
+    .bullet-check{
+      width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:2px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+      display:flex;align-items:center;justify-content:center;
+      font-size:.6rem;color:var(--green-deep);font-weight:800;
+    }
+    .hero-price-row{
+      display:flex;align-items:center;gap:14px;margin-bottom:32px;
+    }
+    .hero-price-old{font-size:.85rem;color:rgba(255,255,255,.4);text-decoration:line-through;}
+    .hero-price-arrow{color:var(--gold-light);font-size:1.1rem;}
+    .hero-price-new{
+      font-family:'Montserrat',sans-serif;
+      font-size:2.6rem;font-weight:900;
+      background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      line-height:1;
+    }
+    .hero-price-tag{font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.5;}
+
+    /* ─── BTN ─── */
+    .btn-main{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold-bright));
+      color:var(--green-deep);
+      font-family:'Montserrat',sans-serif;
+      font-weight:800;font-size:.85rem;
+      padding:18px 40px;border-radius:8px;border:none;
+      cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;
+      box-shadow:0 4px 18px rgba(184,134,42,.35);
+      transition:filter .15s,box-shadow .15s;
+      width:fit-content;
+    }
+    .btn-main:hover{filter:brightness(1.08);box-shadow:0 4px 24px rgba(184,134,42,.5);}
+    .btn-main:active{filter:brightness(.96);}
+
+    .btn-green{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:var(--green);color:var(--white);
+      font-family:'Montserrat',sans-serif;
+      font-weight:800;font-size:.85rem;
+      padding:16px 36px;border-radius:8px;border:none;
+      cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;
+      box-shadow:0 4px 16px rgba(26,56,41,.25);
+      transition:filter .15s;
+    }
+    .btn-green:hover{filter:brightness(1.12);}
+    .btn-green:active{filter:brightness(.92);}
+
+    .btn-outline-gold{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:transparent;color:var(--green);
+      font-family:'Montserrat',sans-serif;
+      font-weight:700;font-size:.85rem;
+      padding:15px 35px;border-radius:8px;border:2px solid var(--gold);
+      cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;
+      transition:background .15s,color .15s;
+    }
+    .btn-outline-gold:hover{background:var(--gold);color:var(--white);}
+    .btn-outline-gold:active{filter:brightness(.92);}
+
+    /* HERO PHOTO — efeito triplo painel */
+    .hero-photo{
+      position:relative;
+      display:flex;align-items:flex-end;justify-content:center;
+      overflow:hidden;
+    }
+
+    /* Reflexos laterais (blur escuro) */
+    .photo-side{
+      position:absolute;
+      top:0;bottom:0;width:55%;
+      background:url('dra.jayana.png.png') center/contain no-repeat;
+      filter:blur(5px) brightness(.28) saturate(.4);
+      opacity:.75;
+      z-index:0;
+    }
+    .photo-side-left{
+      left:-8%;
+      transform:scaleX(-1);
+    }
+    .photo-side-right{
+      right:-8%;
+    }
+
+    /* Raios de luz dourada verticais nas bordas da foto central */
+    .photo-streaks{
+      position:absolute;
+      inset:0;z-index:1;pointer-events:none;
+      background:
+        linear-gradient(to right,
+          transparent 38%,
+          rgba(184,134,42,.22) 42%,
+          transparent 46%),
+        linear-gradient(to right,
+          transparent 54%,
+          rgba(184,134,42,.18) 58%,
+          transparent 62%);
+    }
+
+    /* Vinheta radial — escurece bordas, ilumina centro */
+    .photo-vignette{
+      position:absolute;
+      inset:0;z-index:2;pointer-events:none;
+      background:
+        radial-gradient(ellipse 55% 70% at 50% 45%,
+          transparent 40%,
+          rgba(20,43,30,.75) 100%),
+        linear-gradient(to right,
+          rgba(20,43,30,.8) 0%,
+          transparent 25%,
+          transparent 75%,
+          rgba(20,43,30,.8) 100%);
+    }
+
+    /* Brilho dourado atrás da pessoa */
+    .photo-glow{
+      position:absolute;
+      top:10%;left:50%;transform:translateX(-50%);
+      width:70%;height:80%;
+      background:radial-gradient(ellipse,rgba(184,134,42,.14) 0%,transparent 68%);
+      z-index:1;pointer-events:none;
+    }
+
+    /* Foto principal — sobre tudo */
+    .hero-photo img{
+      position:relative;z-index:3;
+      width:100%;max-height:92vh;
+      object-fit:contain;object-position:center bottom;display:block;
+      /* Múltiplos drop-shadow empilhados + SVG filter pra suavizar borda branca do recorte */
+      filter:
+        url(#fringe-fix)
+        drop-shadow(0 0 1px #142b1e)
+        drop-shadow(0 0 2px #142b1e)
+        drop-shadow(0 0 3px #142b1e)
+        drop-shadow(0 0 5px rgba(20,43,30,.95))
+        brightness(.97);
+      -webkit-mask-image:
+        linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),
+        linear-gradient(to bottom,transparent 0%,black 4%,black 93%,transparent 100%);
+      -webkit-mask-composite:destination-in;
+      mask-image:
+        linear-gradient(to right,transparent 0%,black 18%,black 82%,transparent 100%),
+        linear-gradient(to bottom,transparent 0%,black 4%,black 93%,transparent 100%);
+      mask-composite:intersect;
+    }
+    .hero-photo-glow{
+      position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+      width:80%;height:60px;
+      background:radial-gradient(ellipse,rgba(184,134,42,.2),transparent 70%);
+      filter:blur(20px);z-index:4;
+    }
+
+    /* ─── MARQUEE ─── */
+    .marquee-strip{
+      background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold-mid));
+      border-top:1px solid rgba(184,134,42,.4);
+      border-bottom:1px solid rgba(184,134,42,.4);
+      padding:13px 0;overflow:hidden;width:100%;
+    }
+    .marquee-track{display:flex;width:max-content;animation:marqueeScroll 22s linear infinite;}
+    .marquee-item{
+      display:flex;align-items:center;gap:16px;padding:0 24px;
+      font-family:'Montserrat',sans-serif;
+      font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--green-deep);white-space:nowrap;
+    }
+    .marquee-star{color:var(--green);font-size:.75rem;}
+    @keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* ─── SEÇÕES ─── */
+    .section-wrap{max-width:1100px;margin:0 auto;padding:88px 40px;}
+    .section-wrap-sm{max-width:780px;margin:0 auto;padding:88px 40px;}
+
+    .section-tag{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--gold);margin-bottom:16px;font-weight:600;
+    }
+    .tag-line{display:block;width:28px;height:1px;background:var(--gold);}
+
+    .section-title{
+      font-family:'Montserrat',sans-serif;
+      font-size:clamp(1.6rem,3.5vw,2.7rem);
+      font-weight:900;text-transform:uppercase;
+      line-height:1.15;margin-bottom:16px;letter-spacing:-.01em;
+      color:var(--green-deep);
+    }
+    .section-title .gold-t{
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .section-title .green-t{ color:var(--green); }
+
+    .section-lead{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.1rem;font-style:italic;
+      color:var(--text-soft);max-width:600px;line-height:1.85;margin-bottom:32px;
+    }
+
+    /* ─── GOLD DIVIDER ─── */
+    .gold-hr{
+      border:none;height:1px;
+      background:linear-gradient(to right,transparent,var(--gold-border),transparent);
+      margin:0;
+    }
+
+    /* ─── FRASE HERO ─── */
+    .phrase-section{
+      background:var(--bg-warm);
+      border-top:2px solid transparent;
+      border-image:linear-gradient(to right,transparent,var(--gold-border),transparent) 1;
+    }
+    .phrase-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.8rem,3.8vw,3.2rem);
+      font-weight:700;line-height:1.25;
+      color:var(--green-deep);margin-bottom:24px;text-align:center;
+    }
+    .phrase-title em{
+      font-style:italic;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .phrase-badge{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--green-subtle);
+      border:1px solid var(--green-border);
+      border-radius:100px;padding:12px 28px;
+      font-size:.82rem;font-weight:600;color:var(--green);
+    }
+
+    /* ─── CARDS DE CRENÇAS (fundo branco) ─── */
+    .beliefs-section{background:var(--bg-card);}
+    .beliefs-title{
+      font-family:'Montserrat',sans-serif;
+      font-size:clamp(1.6rem,3.5vw,2.7rem);
+      font-weight:900;text-transform:uppercase;
+      text-align:center;margin-bottom:12px;
+      color:var(--green-deep);letter-spacing:-.01em;
+    }
+    .beliefs-sub{
+      text-align:center;margin-bottom:48px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.1rem;font-style:italic;color:var(--text-muted);
+    }
+    .beliefs-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:44px;
+    }
+    .belief-card{
+      background:var(--bg);
+      border:1px solid var(--green-border);
+      border-radius:14px;padding:26px 22px;
+      display:flex;gap:16px;align-items:flex-start;
+      transition:border-color .3s,transform .3s,box-shadow .3s;
+    }
+    .belief-card:hover{
+      border-color:var(--gold-border);
+      transform:translateY(-5px);
+      box-shadow:0 16px 40px rgba(26,56,41,.08),0 0 0 1px rgba(184,134,42,.15);
+    }
+    .belief-icon{
+      width:38px;height:38px;border-radius:10px;flex-shrink:0;
+      background:var(--green-subtle);
+      border:1px solid var(--green-border);
+      display:flex;align-items:center;justify-content:center;font-size:.9rem;
+    }
+    .belief-label{
+      display:block;font-size:.68rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:.1em;color:var(--gold);margin-bottom:5px;
+    }
+    .belief-text{font-size:.88rem;color:var(--text-soft);line-height:1.65;font-style:italic;}
+
+    .beliefs-cta{text-align:center;}
+    .beliefs-cta-headline{
+      font-family:'Montserrat',sans-serif;
+      font-size:1rem;font-weight:800;text-transform:uppercase;
+      letter-spacing:.08em;color:var(--green);margin-bottom:24px;display:block;
+    }
+
+    /* ─── REVELAÇÃO (bg verde escuro) ─── */
+    .dark-section{
+      background:var(--green-deep);
+      position:relative;overflow:hidden;
+    }
+    .dark-section::before{
+      content:'';position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse at 20% 50%,rgba(184,134,42,.07) 0%,transparent 55%),
+        radial-gradient(ellipse at 80% 80%,rgba(45,104,73,.3) 0%,transparent 50%);
+      pointer-events:none;
+    }
+    .dark-section .section-title{color:var(--white);}
+    .dark-section .section-lead{color:rgba(255,255,255,.65);}
+
+    .dark-inner{
+      display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+      position:relative;z-index:1;
+    }
+
+    .quote-elegant{
+      border-left:3px solid var(--gold);
+      padding:22px 28px;
+      background:rgba(184,134,42,.06);
+      border-radius:0 14px 14px 0;margin:28px 0;
+    }
+    .quote-elegant p{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.15rem,2vw,1.6rem);
+      font-style:italic;line-height:1.55;color:var(--white);
+    }
+    .quote-elegant .em{color:var(--gold-light);}
+
+    .symptom-list-w{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .symptom-list-w li{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:14px 18px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:10px;font-size:.9rem;color:rgba(255,255,255,.8);
+      transition:border-color .3s;line-height:1.6;
+    }
+    .symptom-list-w li:hover{border-color:rgba(184,134,42,.3);}
+    .s-icon{font-size:1.1rem;flex-shrink:0;}
+
+    /* ─── INIMIGO (fundo claro com card verde) ─── */
+    .enemy-section{background:var(--bg-warm);}
+    .enemy-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+    .installed-box-green{
+      background:var(--green);
+      border-radius:20px;padding:36px 32px;
+      box-shadow:0 20px 50px rgba(26,56,41,.25);
+    }
+    .installed-box-green h3{
+      font-family:'Montserrat',sans-serif;
+      font-size:.85rem;font-weight:800;text-transform:uppercase;
+      color:var(--gold-light);letter-spacing:.1em;margin-bottom:20px;
+    }
+    .b-tag-w{
+      display:inline-block;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:100px;padding:8px 18px;
+      font-size:.85rem;color:rgba(255,255,255,.85);font-style:italic;
+      margin:0 6px 10px 0;
+    }
+    .installed-note-w{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.85;margin-top:20px;}
+    .installed-note-w span{color:var(--gold-light);font-weight:600;}
+
+    /* ─── PERSONA (branco) ─── */
+    .persona-section{background:var(--bg-card);}
+    .persona-grid-v2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:32px 0;}
+    .persona-card-v2{
+      background:var(--bg);
+      border:1px solid var(--green-border);
+      border-radius:18px;padding:32px 28px;
+      transition:border-color .3s,transform .3s,box-shadow .3s;
+    }
+    .persona-card-v2:hover{
+      border-color:var(--gold-border);transform:translateY(-4px);
+      box-shadow:0 16px 40px rgba(26,56,41,.08);
+    }
+    .pc-icon{font-size:2.2rem;margin-bottom:14px;}
+    .pc-role{
+      font-family:'Montserrat',sans-serif;
+      font-size:.78rem;font-weight:800;text-transform:uppercase;
+      color:var(--green);letter-spacing:.08em;margin-bottom:10px;
+    }
+    .pc-desc{font-size:.9rem;color:var(--text-soft);line-height:1.75;}
+    .solidarity-item{
+      display:flex;gap:12px;align-items:flex-start;
+      font-size:.92rem;color:var(--text-soft);padding:6px 0;
+    }
+    .sol-arrow{color:var(--green);font-weight:700;flex-shrink:0;}
+
+    /* ─── LEVELS (fundo verde escuro) ─── */
+    .levels-section{background:var(--green-deep);}
+    .levels-section .section-title{color:var(--white);}
+    .levels-section .section-lead{color:rgba(255,255,255,.6);text-align:center;margin:0 auto;}
+    .level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:44px 0;}
+    .level-card{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:18px;padding:36px 28px;
+      position:relative;overflow:hidden;
+      transition:transform .3s,box-shadow .3s,border-color .3s;
+    }
+    .level-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+    .level-card:nth-child(1)::before{background:linear-gradient(to right,var(--gold),transparent);}
+    .level-card:nth-child(2)::before{background:linear-gradient(to right,var(--gold),var(--gold-bright),var(--gold));}
+    .level-card:nth-child(3)::before{background:linear-gradient(to left,var(--gold-bright),transparent);}
+    .level-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 40px rgba(0,0,0,.3),0 0 0 1px rgba(184,134,42,.25);
+      border-color:rgba(184,134,42,.3);
+    }
+    .level-num{
+      width:52px;height:52px;border-radius:50%;
+      background:linear-gradient(135deg,var(--gold),var(--gold-bright));
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.3rem;
+      color:var(--green-deep);margin-bottom:20px;
+      box-shadow:0 0 20px rgba(184,134,42,.35);
+    }
+    .level-card h3{
+      font-family:'Montserrat',sans-serif;
+      font-size:.9rem;font-weight:800;text-transform:uppercase;
+      color:var(--gold-light);letter-spacing:.06em;margin-bottom:12px;
+    }
+    .level-card p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.75;}
+
+    /* ─── TRANSFORMAÇÃO (branco) ─── */
+    .transform-section{background:var(--bg-card);}
+    .transform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:44px 0;}
+    .transform-card{
+      background:var(--bg);
+      border:1px solid var(--green-border);
+      border-radius:14px;padding:28px 24px;
+      display:flex;flex-direction:column;gap:14px;
+      transition:border-color .3s,transform .3s,box-shadow .3s;
+    }
+    .transform-card:hover{
+      border-color:var(--gold-border);transform:translateY(-4px);
+      box-shadow:0 12px 32px rgba(26,56,41,.08);
+    }
+    .tc-icon{
+      width:46px;height:46px;border-radius:12px;
+      background:var(--green-subtle);border:1px solid var(--green-border);
+      display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+    }
+    .tc-title{
+      font-family:'Montserrat',sans-serif;
+      font-size:.82rem;font-weight:800;text-transform:uppercase;
+      color:var(--green);letter-spacing:.07em;
+    }
+    .tc-desc{font-size:.85rem;color:var(--text-muted);line-height:1.7;}
+
+    /* ─── PARA QUEM (bg claro creme) ─── */
+    .for-who-section{background:var(--bg-warm);}
+    .for-who-grid-v2{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:44px 0;}
+    .fw-card-yes{
+      background:var(--green);
+      border-radius:20px;padding:36px 32px;
+      box-shadow:0 16px 40px rgba(26,56,41,.2);
+    }
+    .fw-card-no{
+      background:var(--bg-card);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:20px;padding:36px 32px;
+    }
+    .fw-card-yes h3{
+      font-family:'Montserrat',sans-serif;
+      font-size:.85rem;font-weight:800;text-transform:uppercase;
+      letter-spacing:.08em;color:var(--gold-light);
+      margin-bottom:22px;padding-bottom:16px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .fw-card-no h3{
+      font-family:'Montserrat',sans-serif;
+      font-size:.85rem;font-weight:800;text-transform:uppercase;
+      letter-spacing:.08em;color:var(--text-muted);
+      margin-bottom:22px;padding-bottom:16px;
+      border-bottom:1px solid rgba(0,0,0,.07);
+    }
+    .fw-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+    .fw-card-yes .fw-list li{display:flex;gap:12px;font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.6;}
+    .fw-card-no  .fw-list li{display:flex;gap:12px;font-size:.9rem;color:var(--text-muted);line-height:1.6;}
+    .fw-plus{color:var(--gold-light);flex-shrink:0;margin-top:2px;}
+    .fw-minus{color:#c0bdb8;flex-shrink:0;margin-top:2px;}
+
+    /* ─── MOVIMENTO (verde médio) ─── */
+    .movement-section{background:var(--green-mid);}
+    .movement-section .section-title{color:var(--white);}
+    .movement-inner{text-align:center;position:relative;z-index:1;}
+    .movement-tags{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:28px 0;}
+    .m-stop{
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+      border-radius:100px;padding:10px 22px;font-size:.85rem;color:rgba(255,255,255,.55);
+    }
+    .m-stop s{opacity:.6;}
+    .m-start{
+      background:rgba(184,134,42,.15);border:1px solid rgba(184,134,42,.3);
+      border-radius:100px;padding:10px 22px;font-size:.85rem;color:var(--gold-light);
+    }
+
+    /* ─── CTA FINAL ─── */
+    .cta-section{
+      background:var(--bg-card);
+      border-top:1px solid var(--green-border);
+      text-align:center;
+    }
+    .cta-badge{
+      display:inline-block;
+      background:var(--green-subtle);border:1px solid var(--green-border);
+      border-radius:100px;padding:10px 28px;
+      font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--green);margin-bottom:28px;
+    }
+    .cta-final-title{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,5vw,3.5rem);font-weight:900;
+      line-height:1.2;color:var(--green-deep);margin-bottom:16px;
+    }
+    .cta-final-title .gold-t{
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .cta-lead{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.15rem;font-style:italic;
+      color:var(--text-muted);max-width:520px;margin:0 auto 40px;line-height:1.8;
+    }
+    .event-badges{
+      display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:0 0 36px;
+    }
+    .event-badge-item{
+      display:flex;gap:10px;align-items:center;
+      background:var(--bg);border:1px solid var(--green-border);
+      border-radius:12px;padding:12px 20px;font-size:.82rem;
+    }
+    .ebi-icon{font-size:1.1rem;}
+    .ebi-sub{font-size:.68rem;color:var(--text-muted);display:block;}
+    .ebi-val{font-weight:700;color:var(--green-deep);}
+    .price-final-row{
+      display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 36px;
+    }
+    .pf-old{font-size:.9rem;color:var(--text-muted);text-decoration:line-through;}
+    .pf-arrow{color:var(--gold);font-size:1.2rem;}
+    .pf-new{
+      font-family:'Montserrat',sans-serif;font-size:3.5rem;font-weight:900;
+      background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      line-height:1;
+    }
+    .pf-label{font-size:.75rem;color:var(--text-muted);line-height:1.5;}
+    .security-note{
+      margin-top:20px;font-size:.75rem;color:var(--text-muted);
+      display:flex;align-items:center;justify-content:center;gap:8px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer{
+      background:var(--green-deep);
+      border-top:2px solid transparent;
+      border-image:linear-gradient(to right,transparent,var(--gold-border),transparent) 1;
+      padding:48px 40px;text-align:center;
+    }
+    .footer-logo{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.4rem;font-style:italic;font-weight:600;
+      color:var(--gold-mid);margin-bottom:12px;
+    }
+    .footer-note{font-size:.75rem;color:rgba(255,255,255,.4);max-width:480px;margin:0 auto;}
+
+    /* ─── REVEAL ─── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+
+    /* =====================================================
+       DESKTOP — estilos acima (base do projeto)
+       Tudo acima desta linha é o layout padrão desktop.
+    ===================================================== */
+
+    /* =====================================================
+       TABLET — até 900px
+    ===================================================== */
+    @media(max-width:900px){
+
+      /* Layout hero empilhado */
+      .hero{grid-template-columns:1fr;min-height:auto;}
+
+      /* Foto: aparece primeiro, altura controlada, cabeça visível */
+      .hero-photo{
+        height:72vw;
+        max-height:none;
+        order:-1;
+        display:flex;
+        align-items:flex-start;
+        justify-content:center;
+        overflow:hidden;
+      }
+      .hero-photo img{
+        width:auto;
+        height:100%;
+        max-height:none;
+        object-fit:contain;
+        object-position:center top;
+        /* Mantém filtro pra borda branca, sem máscara lateral */
+        filter:drop-shadow(0 0 8px rgba(20,43,30,0.85)) drop-shadow(0 0 2px rgba(20,43,30,1));
+        -webkit-mask-image:linear-gradient(to bottom,black 0%,black 85%,transparent 100%);
+        mask-image:linear-gradient(to bottom,black 0%,black 85%,transparent 100%);
+        -webkit-mask-composite:destination-in;
+        mask-composite:intersect;
+      }
+
+      /* Texto mais perto da foto */
+      .hero-copy{padding:20px 24px 40px;}
+      .hero-eyebrow{margin-bottom:16px;}
+      .hero-title{margin-bottom:12px;}
+      .hero-sub{margin-bottom:16px;}
+      .hero-bullets{margin-bottom:20px;}
+      .hero-price-row{margin-bottom:20px;}
+
+      /* Grids que viram coluna única */
+      .beliefs-grid{grid-template-columns:1fr 1fr;}
+      .dark-inner,.enemy-inner{grid-template-columns:1fr;}
+      .persona-grid-v2{grid-template-columns:1fr;}
+      .level-grid{grid-template-columns:1fr;}
+      .transform-grid{grid-template-columns:1fr 1fr;}
+      .for-who-grid-v2{grid-template-columns:1fr;}
+    }
+
+    /* =====================================================
+       MOBILE — até 600px (celular)
+    ===================================================== */
+    @media(max-width:600px){
+
+      /* Topbar: esconde infos e compacta */
+      .topbar{padding:0 16px;}
+      .topbar-info{display:none;}
+
+      /* Hero vira flex coluna com overlap */
+      .hero{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        min-height:auto;
+      }
+
+      /* Foto: aparece primeiro, altura generosa pro corpo aparecer */
+      .hero-photo{
+        height:105vw;
+        order:-1;
+        position:relative;
+        z-index:1;
+      }
+      /* Gradiente que funde a base da foto com o fundo verde */
+      .hero-photo::after{
+        content:'';
+        position:absolute;
+        bottom:0;left:0;right:0;
+        height:55%;
+        background:linear-gradient(to top, var(--green-deep) 0%, transparent 100%);
+        pointer-events:none;
+        z-index:2;
+      }
+
+      /* Copy: sobe pra cima da foto com margem negativa */
+      .hero-copy{
+        position:relative;
+        z-index:3;
+        margin-top:-140px;
+        padding:0 18px 36px;
+        background:transparent;
+      }
+
+      /* Espaçamentos compactos pra caber bem */
+      .hero-eyebrow{margin-bottom:12px;}
+      .hero-title{font-size:1.5rem;margin-bottom:10px;}
+      .hero-sub{font-size:.95rem;margin-bottom:14px;}
+      .hero-bullets{margin-bottom:16px;}
+      .hero-price-row{margin-bottom:18px;}
+
+      /* Seções com menos padding lateral */
+      .section-wrap,.section-wrap-sm{padding:56px 18px;}
+
+      /* Cards em coluna única */
+      .beliefs-grid{grid-template-columns:1fr;}
+      .transform-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- Filtro SVG inline pra suavizar borda branca do recorte Photoshop -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="fringe-fix" color-interpolation-filters="sRGB">
+      <!-- Erode ligeiramente as bordas para puxar pixels brancos pra dentro -->
+      <feMorphology operator="erode" radius="0.8" in="SourceGraphic" result="eroded"/>
+      <!-- Dilata de volta com a cor do fundo aderida -->
+      <feGaussianBlur stdDeviation="0.6" in="eroded" result="blurred"/>
+      <!-- Composita: pixel original sobre o blur eroded -->
+      <feComposite in="SourceGraphic" in2="blurred" operator="atop" result="composited"/>
+      <!-- Empurra ligeiramente as bordas sem destruir interior -->
+      <feBlend in="composited" in2="blurred" mode="multiply" result="blended"/>
+      <feComposite in="SourceGraphic" in2="blended" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- ══════════ TOP BAR ══════════ -->
+<nav class="topbar">
+  <div class="topbar-logo">Jayana</div>
+  <div class="topbar-info">
+    <span>📅 <strong>03 de Maio</strong></span>
+    <span>🕘 <strong>09h da manhã</strong></span>
+    <span>💻 Online · Google Meet</span>
+  </div>
+  <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="topbar-live">
+    <div class="live-dot"></div>
+    Garantir Vaga · R$27
+  </a>
+</nav>
+
+<!-- ══════════ HERO (verde escuro) ══════════ -->
+<div class="hero-wrap">
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">✦ Evento Online Ao Vivo · 03 de Maio ✦</div>
+      <h1 class="hero-title">
+        O Despertar do
+        <span class="gold-text">Dinheiro Rápido</span>
+        na Sua Vida
+      </h1>
+      <p class="hero-sub">
+        Como o Desbloqueio Espiritual, emocional e mental pode <em>romper o ciclo da escassez</em> e destravar uma nova realidade financeira na sua vida.
+      </p>
+      <ul class="hero-bullets">
+        <li><div class="bullet-check">✓</div> Entenda por que sua vida repete os mesmos padrões</li>
+        <li><div class="bullet-check">✓</div> Quebre o ciclo da escassez interna de vez</li>
+        <li><div class="bullet-check">✓</div> Reconstrua sua percepção de merecimento</li>
+        <li><div class="bullet-check">✓</div> Com consciência, estrutura e verdade</li>
+      </ul>
+      <div class="hero-price-row">
+        <span class="hero-price-old">De R$ 197</span>
+        <span class="hero-price-arrow">→</span>
+        <span class="hero-price-new">R$&nbsp;27</span>
+        <span class="hero-price-tag">valor simbólico<br/>de entrada</span>
+      </div>
+      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="hero-cta">✨ QUERO GARANTIR MINHA VAGA AGORA</a>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-side photo-side-left"></div>
+      <div class="photo-side photo-side-right"></div>
+      <div class="photo-glow"></div>
+      <div class="photo-streaks"></div>
+      <img src="dra.jayana.png.png" alt="Dra. Jayana — Especialista em Desbloqueio Financeiro" loading="eager"/>
+      <div class="photo-vignette"></div>
+      <div class="hero-photo-glow"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ MARQUEE (verde) ══════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>DESPERTAR</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>ABUNDÂNCIA</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>RECONFIGURAÇÃO INTERNA</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>DESBLOQUEIO FINANCEIRO</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>NOVA REALIDADE</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>CONSCIÊNCIA</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>MERECIMENTO</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>PROSPERIDADE</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>DESPERTAR</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>ABUNDÂNCIA</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>RECONFIGURAÇÃO INTERNA</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>DESBLOQUEIO FINANCEIRO</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>NOVA REALIDADE</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>CONSCIÊNCIA</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>MERECIMENTO</span><span class="marquee-star">✦</span></div>
+    <div class="marquee-item"><span>PROSPERIDADE</span><span class="marquee-star">✦</span></div>
+  </div>
+</div>
+
+<!-- ══════════ FRASE (creme) ══════════ -->
+<section class="phrase-section">
+  <div class="section-wrap-sm" style="text-align:center;">
+    <div class="reveal">
+      <h2 class="phrase-title">
+        Você não está quebrada.<br/>
+        Você está <em>programada</em>.<br/>
+        E isso muda <em>tudo</em>.
+      </h2>
+      <div class="phrase-badge">🔍 Então a pergunta é: você está pronta para despertar?</div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ CARDS DE CRENÇAS (branco) ══════════ -->
+<section class="beliefs-section">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="beliefs-title">Se Você Já Disse a Si Mesma(o)...</h2>
+      <p class="beliefs-sub">Você não está sozinha. Isso não é fraqueza — é condicionamento.</p>
+    </div>
+
+    <div class="beliefs-grid reveal">
+      <div class="belief-card">
+        <div class="belief-icon">💭</div>
+        <div>
+          <span class="belief-label">Ciclo Repetido</span>
+          <p class="belief-text">"Mesmo tentando, melhorando, orando… a vida continua nos mesmos padrões"</p>
+        </div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">😔</div>
+        <div>
+          <span class="belief-label">Autossabotagem</span>
+          <p class="belief-text">"Eu não sou suficiente. Não mereço o que quero. Pra mim não funciona"</p>
+        </div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">💸</div>
+        <div>
+          <span class="belief-label">Escassez</span>
+          <p class="belief-text">"Dinheiro nunca sobra. Parece que tem uma força me puxando para baixo"</p>
+        </div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">🔋</div>
+        <div>
+          <span class="belief-label">Exaustão</span>
+          <p class="belief-text">"Me sinto carregando tudo sozinha. Um cansaço que não é físico"</p>
+        </div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">🌑</div>
+        <div>
+          <span class="belief-label">Ansiedade</span>
+          <p class="belief-text">"A ansiedade não vai embora. Sinto que nunca estou fazendo o suficiente"</p>
+        </div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">🔓</div>
+        <div>
+          <span class="belief-label">Desconexão</span>
+          <p class="belief-text">"Sei que existe algo maior, mas não sei como acessar. Uma paz que nunca chega"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="beliefs-cta reveal">
+      <span class="beliefs-cta-headline">✦ Então o Despertar é pra você! ✦</span>
+      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-green" id="beliefs-cta">🔥 EU QUERO GARANTIR MINHA VAGA</a>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ CRISE INVISÍVEL (verde escuro) ══════════ -->
+<section class="dark-section">
+  <div class="section-wrap">
+    <div class="dark-inner reveal">
+      <div>
+        <div class="section-tag"><span class="tag-line"></span>O que quase ninguém quer que você saiba<span class="tag-line"></span></div>
+        <h2 class="section-title" style="color:var(--white)">Estamos vivendo uma <span class="gold-t">Crise Invisível</span></h2>
+        <p class="section-lead">Não é apenas sobre economia. É sobre a <strong style="color:rgba(255,255,255,.9)">mente humana em colapso silencioso</strong>.</p>
+        <div class="quote-elegant">
+          <p>Milhões de pessoas vivem <span class="em">funcionando</span> mas não vivem <span class="em">plenamente</span>.<br/>E o mais perigoso: isso começou a parecer "normal".</p>
+        </div>
+      </div>
+      <div>
+        <ul class="symptom-list-w">
+          <li><span class="s-icon">🌪️</span> Níveis crescentes de ansiedade e depressão</li>
+          <li><span class="s-icon">🔥</span> Exaustão emocional crônica</li>
+          <li><span class="s-icon">🧭</span> Perda de propósito e direção</li>
+          <li><span class="s-icon">🪞</span> Sensação coletiva de insuficiência</li>
+          <li><span class="s-icon">😶</span> Uma paz que nunca chega inteira</li>
+          <li><span class="s-icon">💸</span> Dinheiro que nunca sobra mesmo com esforço</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ O INIMIGO (creme + card verde) ══════════ -->
+<section class="enemy-section">
+  <div class="section-wrap">
+    <div class="enemy-inner reveal">
+      <div>
+        <div class="section-tag"><span class="tag-line"></span>O inimigo não é o que te disseram<span class="tag-line"></span></div>
+        <h2 class="section-title">Ele mora <span class="green-t">Dentro de Você</span></h2>
+        <p class="section-lead">O inimigo nunca foi externo. Ele não tem rosto.<br/>Essas ideias não nasceram com você — elas foram instaladas.</p>
+        <p style="font-size:.9rem;color:var(--text-muted);line-height:1.85;">Família. Sociedade. Experiências. Rejeições. Medos.<br/><br/>E quando você acredita nelas por tempo suficiente — <strong style="color:var(--green);">elas viram destino.</strong></p>
+      </div>
+      <div class="installed-box-green">
+        <h3>Crenças Instaladas</h3>
+        <div>
+          <span class="b-tag-w">"Eu não sou suficiente"</span>
+          <span class="b-tag-w">"Eu não mereço isso"</span>
+          <span class="b-tag-w">"Dinheiro é difícil"</span>
+          <span class="b-tag-w">"Amor é sofrimento"</span>
+          <span class="b-tag-w">"Pra mim não funciona"</span>
+        </div>
+        <p class="installed-note-w">Essas ideias não nasceram com você.<br/>Elas foram <span>instaladas</span>.<br/><br/>E quando você acredita nelas por tempo suficiente,<br/><span>elas viram destino</span>.<br/><br/>A boa notícia? O que foi instalado pode ser <span>reconfigurado</span>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ NÃO ESTÁ SOZINHA (branco) ══════════ -->
+<section class="persona-section">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag" style="justify-content:center;"><span class="tag-line"></span>Não, você não está sozinha(o)<span class="tag-line"></span></div>
+      <h2 class="section-title">A dor não é individual.<br/>Ela é <span class="gold-t">coletiva</span>.</h2>
+    </div>
+    <div class="persona-grid-v2 reveal">
+      <div class="persona-card-v2">
+        <div class="pc-icon">👩</div>
+        <div class="pc-role">Mulher 35+ · Mãe · Profissional</div>
+        <p class="pc-desc">Filha, cuidadora, líder. Você carrega tudo, resolve tudo, segura tudo. E ainda assim sente que nunca está fazendo o suficiente. Por fora parece forte. Por dentro existe um cansaço que ninguém vê.</p>
+      </div>
+      <div class="persona-card-v2">
+        <div class="pc-icon">👨</div>
+        <div class="pc-role">Homem · Pai · Provedor</div>
+        <p class="pc-desc">Profissional com responsabilidade todos os dias. Cada um no seu papel, mas com o mesmo peso interno. A mesma cobrança, a mesma pressão, a mesma desconexão com a própria vida.</p>
+      </div>
+    </div>
+    <div class="reveal" style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
+      <div class="solidarity-item"><span class="sol-arrow">👉</span> Homens e mulheres estão vivendo isso em silêncio</div>
+      <div class="solidarity-item"><span class="sol-arrow">👉</span> Cada um no seu papel, mas com o mesmo peso interno</div>
+      <div class="solidarity-item"><span class="sol-arrow">👉</span> A mesma cobrança, a mesma pressão, a mesma desconexão</div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-green" id="persona-cta">✨ QUERO GARANTIR MINHA VAGA AGORA</a>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ OS 3 NÍVEIS (verde escuro) ══════════ -->
+<section class="levels-section">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag" style="justify-content:center;color:var(--gold-light);"><span class="tag-line" style="background:var(--gold-light)"></span>O que você vai viver no aulão<span class="tag-line" style="background:var(--gold-light)"></span></div>
+      <h2 class="section-title" style="color:var(--white);text-align:center;">3 Níveis de <span class="gold-t">Virada</span></h2>
+      <p class="section-lead">Sem misticismo vazio. Sem promessas irreais.<br/>Com <strong style="color:rgba(255,255,255,.85)">consciência, estrutura e verdade</strong>.</p>
+    </div>
+    <div class="level-grid reveal">
+      <div class="level-card">
+        <div class="level-num">1</div>
+        <h3>Consciência da Programação</h3>
+        <p>Você vai enxergar com clareza o que te prendeu até hoje — os padrões invisíveis que controlam suas escolhas sem que você perceba.</p>
+      </div>
+      <div class="level-card">
+        <div class="level-num">2</div>
+        <h3>Ruptura dos Padrões de Escassez</h3>
+        <p>Vai entender como pensamentos automáticos moldam sua realidade financeira, emocional e relacional — e como começar a quebrá-los.</p>
+      </div>
+      <div class="level-card">
+        <div class="level-num">3</div>
+        <h3>Reconfiguração do Merecimento</h3>
+        <p>Você vai começar a reconstruir a base interna da abundância — a fundação que faz prosperidade, paz e amor serem possíveis para você.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="levels-cta">🔥 EU QUERO GARANTIR MINHA VAGA</a>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ TRANSFORMAÇÃO (branco) ══════════ -->
+<section class="transform-section">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:8px;">
+      <div class="section-tag" style="justify-content:center;"><span class="tag-line"></span>O que muda depois disso<span class="tag-line"></span></div>
+      <h2 class="section-title" style="text-align:center;">Transforme a Sua <span class="gold-t">Realidade</span></h2>
+      <p class="section-lead" style="text-align:center;margin:0 auto;">Você não "vira outra pessoa". Você começa a enxergar como sempre foi possível.<br/>Não é mágica — é <em>reorganização interna</em>.</p>
+    </div>
+    <div class="transform-grid reveal">
+      <div class="transform-card">
+        <div class="tc-icon">🌤️</div>
+        <div class="tc-title">Mais Leveza Emocional</div>
+        <p class="tc-desc">Mais leveza no dia a dia e clareza nas suas decisões importantes.</p>
+      </div>
+      <div class="transform-card">
+        <div class="tc-icon">💡</div>
+        <div class="tc-title">Clareza nas Decisões</div>
+        <p class="tc-desc">Mais consciência nas relações e abertura genuína para a prosperidade.</p>
+      </div>
+      <div class="transform-card">
+        <div class="tc-icon">💰</div>
+        <div class="tc-title">Abertura pra Prosperidade</div>
+        <p class="tc-desc">O dinheiro deixa de vir acompanhado de culpa. Você começa a receber com leveza.</p>
+      </div>
+      <div class="transform-card">
+        <div class="tc-icon">❤️</div>
+        <div class="tc-title">Relações Mais Saudáveis</div>
+        <p class="tc-desc">Amor sem dor. Conexões que somam em vez de drenar sua energia vital.</p>
+      </div>
+      <div class="transform-card">
+        <div class="tc-icon">🛡️</div>
+        <div class="tc-title">Menos Autossabotagem</div>
+        <p class="tc-desc">Sua mente passa a trabalhar a seu favor, não contra você.</p>
+      </div>
+      <div class="transform-card">
+        <div class="tc-icon">🌀</div>
+        <div class="tc-title">Mais Presença na Vida</div>
+        <p class="tc-desc">Você para de sobreviver emocionalmente e começa a viver de verdade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ PARA QUEM (creme) ══════════ -->
+<section class="for-who-section">
+  <div class="section-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:8px;">
+      <div class="section-tag" style="justify-content:center;"><span class="tag-line"></span>Esse aulão é pra você?<span class="tag-line"></span></div>
+      <h2 class="section-title" style="text-align:center;">Para Quem É — e Para Quem <span class="gold-t">Não É</span></h2>
+    </div>
+    <div class="for-who-grid-v2 reveal">
+      <div class="fw-card-yes">
+        <h3>✅ Para você que...</h3>
+        <ul class="fw-list">
+          <li><span class="fw-plus">✦</span> Sente que está sempre no limite emocional</li>
+          <li><span class="fw-plus">✦</span> Já tentou de tudo e ainda não se sente em paz</li>
+          <li><span class="fw-plus">✦</span> Vive ciclos repetidos em amor, dinheiro ou autoestima</li>
+          <li><span class="fw-plus">✦</span> Sabe que existe algo "maior", mas não sabe o quê</li>
+          <li><span class="fw-plus">✦</span> Quer entender sua mente em vez de lutar contra ela</li>
+        </ul>
+      </div>
+      <div class="fw-card-no">
+        <h3>❌ Não é para quem...</h3>
+        <ul class="fw-list">
+          <li><span class="fw-minus">✗</span> Quer solução mágica e imediata sem esforço interno</li>
+          <li><span class="fw-minus">✗</span> Não está disposto(a) a olhar para dentro</li>
+          <li><span class="fw-minus">✗</span> Prefere continuar culpando o mundo pela sua situação</li>
+          <li><span class="fw-minus">✗</span> Não quer mudar padrões internos e crenças limitantes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-hr"/>
+
+<!-- ══════════ MOVIMENTO (verde médio) ══════════ -->
+<section class="movement-section">
+  <div class="section-wrap">
+    <div class="movement-inner reveal">
+      <div class="section-tag" style="justify-content:center;color:var(--gold-light);"><span class="tag-line" style="background:var(--gold-light)"></span>Isso não é um curso — é um programa em movimento<span class="tag-line" style="background:var(--gold-light)"></span></div>
+      <h2 class="section-title" style="text-align:center;color:var(--white);">Um movimento de pessoas que<br/><span class="gold-t">decidiram sair do automático</span></h2>
+      <p style="text-align:center;font-weight:600;color:rgba(255,255,255,.5);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin:28px 0 12px">Parar de:</p>
+      <div class="movement-tags">
+        <div class="m-stop">🚫 <s>romantizar sofrimento</s></div>
+        <div class="m-stop">🚫 <s>normalizar escassez</s></div>
+        <div class="m-stop">🚫 <s>aceitar menos do que merece</s></div>
+        <div class="m-stop">🚫 <s>repetir histórias antigas</s></div>
+      </div>
+      <p style="text-align:center;font-weight:600;color:rgba(255,255,255,.5);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin:20px 0 12px">E começar:</p>
+      <div class="movement-tags">
+        <div class="m-start">✨ Mais consciente</div>
+        <div class="m-start">🌿 Mais leve</div>
+        <div class="m-start">💛 Mais verdadeiro</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA FINAL (branco) ══════════ -->
+<section class="cta-section" id="inscricao">
+  <div class="section-wrap" style="text-align:center;">
+    <div class="reveal">
+      <div class="cta-badge">AO VIVO · ONLINE · VAGAS LIMITADAS</div>
+      <h2 class="cta-final-title">
+        O <span class="gold-t">Despertar do Dinheiro</span><br/>
+        Rápido na Sua Vida
+      </h2>
+      <p class="cta-lead">Um encontro para quem decidiu sair do automático e reconstruir sua forma de sentir, pensar e viver.</p>
+    </div>
+    <div class="event-badges reveal">
+      <div class="event-badge-item">
+        <span class="ebi-icon">📅</span>
+        <div><span class="ebi-sub">Data</span><span class="ebi-val">03 de Maio</span></div>
+      </div>
+      <div class="event-badge-item">
+        <span class="ebi-icon">🕘</span>
+        <div><span class="ebi-sub">Horário</span><span class="ebi-val">09h da manhã</span></div>
+      </div>
+      <div class="event-badge-item">
+        <span class="ebi-icon">💻</span>
+        <div><span class="ebi-sub">Formato</span><span class="ebi-val">Online · Google Meet</span></div>
+      </div>
+      <div class="event-badge-item">
+        <span class="ebi-icon">🔒</span>
+        <div><span class="ebi-sub">Vagas</span><span class="ebi-val">Limitadas</span></div>
+      </div>
+    </div>
+    <div class="price-final-row reveal">
+      <span class="pf-old">De R$ 197</span>
+      <span class="pf-arrow">→</span>
+      <span class="pf-new">R$&nbsp;27</span>
+      <span class="pf-label">valor simbólico<br/>de entrada</span>
+    </div>
+    <div class="reveal">
+      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="final-cta" style="font-size:1rem;padding:20px 54px;">
+        🚀 QUERO GARANTIR MINHA VAGA AGORA
+      </a>
+    </div>
+    <p class="security-note reveal">
+      🔒 Compra 100% segura · Acesso imediato via e-mail · Pagamento protegido
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER (verde escuro) ══════════ -->
+<footer>
+  <div class="footer-logo">Jayana</div>
+  <p class="footer-note">O Despertar do Dinheiro Rápido na Sua Vida · Evento Online Ao Vivo · 03 de Maio de 2025<br/>Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  // REVEAL ON SCROLL
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+    {threshold: 0.1}
+  );
+  revealEls.forEach(el => obs.observe(el));
+
+  // TOPBAR BG
+  const topbar = document.querySelector('.topbar');
+  window.addEventListener('scroll', () => {
+    topbar.style.boxShadow = window.scrollY > 60
+      ? '0 2px 20px rgba(26,56,41,.1)'
+      : 'none';
+  });
+</script>
+</body>
+</html>
