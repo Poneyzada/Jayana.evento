@@ -226,9 +226,9 @@
       position:absolute;
       top:0;bottom:0;width:45%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
-      filter:blur(6px) brightness(.52) saturate(.45);
-      opacity:.92;
-      z-index:5; /* acima da foto principal */
+      filter:blur(7px) brightness(.42) saturate(0);
+      opacity:.95;
+      z-index:0;
     }
     .photo-side-left{
       left:0;
@@ -766,17 +766,7 @@
       .hero-bullets{margin-bottom:20px;}
       .hero-price-row{margin-bottom:20px;}
 
-      .photo-side{ width:45%; opacity:.9; }
-      .photo-side-left{
-        left:0;
-        -webkit-mask-image:linear-gradient(to right, black 45%, transparent 72%);
-        mask-image:linear-gradient(to right, black 45%, transparent 72%);
-      }
-      .photo-side-right{
-        right:0;
-        -webkit-mask-image:linear-gradient(to left, black 45%, transparent 72%);
-        mask-image:linear-gradient(to left, black 45%, transparent 72%);
-      }
+      .photo-side{ width:45%; opacity:.9; filter:blur(7px) brightness(.42) saturate(0); }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
       .persona-grid-v2{grid-template-columns:1fr;}
