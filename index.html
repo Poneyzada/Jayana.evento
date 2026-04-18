@@ -786,12 +786,12 @@
         position:relative;
         z-index:1;
       }
-      /* Gradiente que funde a base da foto com o fundo verde */
+      /* Gradiente que funde APENAS a base da foto com o fundo verde */
       .hero-photo::after{
         content:'';
         position:absolute;
         bottom:0;left:0;right:0;
-        height:55%;
+        height:22%;
         background:linear-gradient(to top, var(--green-deep) 0%, transparent 100%);
         pointer-events:none;
         z-index:2;
@@ -1265,6 +1265,14 @@
 <footer>
   <div class="footer-logo">Jayana</div>
   <p class="footer-note">O Despertar do Dinheiro Rápido na Sua Vida · Evento Online Ao Vivo · 03 de Maio de 2025<br/>Todos os direitos reservados.</p>
+  <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);">
+    <p style="font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.9;">
+      <strong style="color:rgba(255,255,255,.5);">Instituto Viva Espiritualidade</strong><br/>
+      CNPJ: <span id="cnpj-instituto">XX.XXX.XXX/XXXX-XX</span><br/>
+      Este site não é afiliado ao Facebook™ ou ao Google™.<br/>
+      Ao acessar este site você concorda com nossa Política de Privacidade.
+    </p>
+  </div>
 </footer>
 
 <script>
