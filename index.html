@@ -225,8 +225,8 @@
       position:absolute;
       top:0;bottom:0;width:45%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
-      filter:blur(7px) brightness(.42) saturate(0);
-      opacity:.95;
+      filter:blur(6px) brightness(.55) saturate(.15);
+      opacity:.9;
       z-index:0;
     }
     .photo-side-left{ left:0; transform:scaleX(-1); }
@@ -278,13 +278,12 @@
         drop-shadow(0 0 4px #142b1e)
         drop-shadow(0 0 6px rgba(20,43,30,.9))
         brightness(.97);
-      /* Fade mínimo nas bordas — braços ficam totalmente opacos */
       -webkit-mask-image:
-        linear-gradient(to right,transparent 0%,black 2%,black 98%,transparent 100%),
+        linear-gradient(to right,transparent 0%,black 16%,black 84%,transparent 100%),
         linear-gradient(to bottom,transparent 0%,black 9%,black 93%,transparent 100%);
       -webkit-mask-composite:destination-in;
       mask-image:
-        linear-gradient(to right,transparent 0%,black 2%,black 98%,transparent 100%),
+        linear-gradient(to right,transparent 0%,black 16%,black 84%,transparent 100%),
         linear-gradient(to bottom,transparent 0%,black 9%,black 93%,transparent 100%);
       mask-composite:intersect;
     }
@@ -293,15 +292,6 @@
       width:80%;height:60px;
       background:radial-gradient(ellipse,rgba(184,134,42,.2),transparent 70%);
       filter:blur(20px);z-index:4;
-    }
-    /* Cobre a area transparente do PNG abaixo dos bracos */
-    .photo-bottom-cover{
-      position:absolute;
-      bottom:0;left:0;right:0;
-      height:20%;
-      background:linear-gradient(to top, var(--green-deep) 20%, transparent 100%);
-      z-index:3;
-      pointer-events:none;
     }
 
     /* ─── MARQUEE ─── */
