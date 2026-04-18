@@ -305,6 +305,15 @@
       background:radial-gradient(ellipse,rgba(184,134,42,.2),transparent 70%);
       filter:blur(20px);z-index:4;
     }
+    /* Cobre a area transparente do PNG abaixo dos bracos */
+    .photo-bottom-cover{
+      position:absolute;
+      bottom:0;left:0;right:0;
+      height:40%;
+      background:linear-gradient(to top, var(--green-deep) 0%, transparent 100%);
+      z-index:3;
+      pointer-events:none;
+    }
 
     /* ─── MARQUEE ─── */
     .marquee-strip{
@@ -903,6 +912,7 @@
       <div class="photo-glow"></div>
       <div class="photo-streaks"></div>
       <img src="dra.jayana.png.png" alt="Dra. Jayana — Especialista em Desbloqueio Financeiro" loading="eager"/>
+      <div class="photo-bottom-cover"></div>
       <div class="photo-vignette"></div>
       <div class="hero-photo-glow"></div>
     </div>
