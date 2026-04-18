@@ -774,23 +774,23 @@
 
       /* Foto: aparece primeiro, altura generosa pro corpo aparecer */
       .hero-photo{
-        height:125vw;
+        height:115vw;
         order:-1;
         position:relative;
         z-index:1;
       }
-      /* Gradiente mais forte no bottom pra esconder o corte redondo do PNG */
+      /* Gradiente suave no bottom para o final da foto não ficar duro */
       .hero-photo::after{
         content:'';
         position:absolute;
         bottom:0;left:0;right:0;
-        height:25%;
-        background:linear-gradient(to top, var(--green-deep) 30%, transparent 100%);
+        height:15%;
+        background:linear-gradient(to top, var(--green-deep) 0%, transparent 100%);
         pointer-events:none;
         z-index:2;
       }
 
-      /* Copy: sobe pra esconder a base cortada e colar nos braços */
+      /* Copy: sobe pra cruzar os botões na cintura e o texto na perna dela */
       .hero-copy{
         position:relative;
         z-index:3;
