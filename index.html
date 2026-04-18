@@ -221,25 +221,26 @@
       min-height:calc(100vh - 64px);
     }
 
-    /* Reflexos laterais — 45% de largura, sólidos na borda, funde antes dos braços */
+    /* Reflexos laterais — acima da imagem, só nas bordas */
     .photo-side{
       position:absolute;
       top:0;bottom:0;width:45%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
       filter:blur(6px) brightness(.45) saturate(.45);
       opacity:.92;
-      z-index:0;
+      z-index:5; /* acima da foto principal */
     }
     .photo-side-left{
       left:0;
       transform:scaleX(-1);
-      -webkit-mask-image:linear-gradient(to right, black 25%, transparent 60%);
-      mask-image:linear-gradient(to right, black 25%, transparent 60%);
+      /* Sólido na borda, transparente no centro (onde fica o corpo) */
+      -webkit-mask-image:linear-gradient(to right, black 30%, transparent 55%);
+      mask-image:linear-gradient(to right, black 30%, transparent 55%);
     }
     .photo-side-right{
       right:0;
-      -webkit-mask-image:linear-gradient(to left, black 25%, transparent 60%);
-      mask-image:linear-gradient(to left, black 25%, transparent 60%);
+      -webkit-mask-image:linear-gradient(to left, black 30%, transparent 55%);
+      mask-image:linear-gradient(to left, black 30%, transparent 55%);
     }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
@@ -288,13 +289,13 @@
         drop-shadow(0 0 4px #142b1e)
         drop-shadow(0 0 6px rgba(20,43,30,.9))
         brightness(.97);
-      /* Fade só nas bordas externas — NÃO onde ficam os braços */
+      /* Fade mínimo nas bordas — braços ficam totalmente opacos */
       -webkit-mask-image:
-        linear-gradient(to right,transparent 0%,black 4%,black 96%,transparent 100%),
+        linear-gradient(to right,transparent 0%,black 2%,black 98%,transparent 100%),
         linear-gradient(to bottom,transparent 0%,black 9%,black 93%,transparent 100%);
       -webkit-mask-composite:destination-in;
       mask-image:
-        linear-gradient(to right,transparent 0%,black 4%,black 96%,transparent 100%),
+        linear-gradient(to right,transparent 0%,black 2%,black 98%,transparent 100%),
         linear-gradient(to bottom,transparent 0%,black 9%,black 93%,transparent 100%);
       mask-composite:intersect;
     }
@@ -756,17 +757,17 @@
       .hero-bullets{margin-bottom:20px;}
       .hero-price-row{margin-bottom:20px;}
 
-      /* Reflexos laterais no mobile — 45% com fade nos braços */
-      .photo-side{ width:45%; opacity:.85; }
+      /* Mobile: paineis acima da imagem, transparentes no centro */
+      .photo-side{ width:45%; opacity:.88; }
       .photo-side-left{
         left:0;
-        -webkit-mask-image:linear-gradient(to right, black 20%, transparent 60%);
-        mask-image:linear-gradient(to right, black 20%, transparent 60%);
+        -webkit-mask-image:linear-gradient(to right, black 25%, transparent 52%);
+        mask-image:linear-gradient(to right, black 25%, transparent 52%);
       }
       .photo-side-right{
         right:0;
-        -webkit-mask-image:linear-gradient(to left, black 20%, transparent 60%);
-        mask-image:linear-gradient(to left, black 20%, transparent 60%);
+        -webkit-mask-image:linear-gradient(to left, black 25%, transparent 52%);
+        mask-image:linear-gradient(to left, black 25%, transparent 52%);
       }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
