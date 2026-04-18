@@ -270,7 +270,7 @@
 
     .hero-photo img{
       position:relative;z-index:3;
-      width:75%;max-height:92vh;margin:0 auto;
+      width:75%;height:auto;max-height:92vh;margin:0 auto;
       object-fit:contain;object-position:center bottom;display:block;
       transform:translateX(-3%);
       filter:
@@ -279,10 +279,6 @@
         drop-shadow(0 0 4px #142b1e)
         drop-shadow(0 0 6px rgba(20,43,30,.9))
         brightness(.97);
-      -webkit-mask-image:
-        linear-gradient(to right,transparent 0%,black 16%,black 84%,transparent 100%);
-      mask-image:
-        linear-gradient(to right,transparent 0%,black 16%,black 84%,transparent 100%);
     }
     .hero-photo-glow{
       position:absolute;bottom:0;left:50%;transform:translateX(-50%);
@@ -729,12 +725,12 @@
         overflow:hidden;
       }
       .hero-photo img{
-        width:auto;
-        height:100%;
-        max-height:none;
+        width:85%;
+        height:auto;
+        max-height:100%;
         object-fit:contain;
         transform:translateX(-5%);
-        /* Mantém filtro pra borda branca, sem máscara infernal cortando a perna */
+        /* Mantém filtro pra borda branca, sem máscara infernal cortando a perna ou laterais */
         filter:drop-shadow(0 0 8px rgba(20,43,30,0.85)) drop-shadow(0 0 2px rgba(20,43,30,1));
       }
 
