@@ -226,7 +226,7 @@
       position:absolute;
       top:0;bottom:0;width:45%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
-      filter:blur(6px) brightness(.45) saturate(.45);
+      filter:blur(6px) brightness(.52) saturate(.45);
       opacity:.92;
       z-index:5; /* acima da foto principal */
     }
@@ -234,13 +234,13 @@
       left:0;
       transform:scaleX(-1);
       /* Sólido na borda, transparente no centro (onde fica o corpo) */
-      -webkit-mask-image:linear-gradient(to right, black 30%, transparent 55%);
-      mask-image:linear-gradient(to right, black 30%, transparent 55%);
+      -webkit-mask-image:linear-gradient(to right, black 50%, transparent 78%);
+      mask-image:linear-gradient(to right, black 50%, transparent 78%);
     }
     .photo-side-right{
       right:0;
-      -webkit-mask-image:linear-gradient(to left, black 30%, transparent 55%);
-      mask-image:linear-gradient(to left, black 30%, transparent 55%);
+      -webkit-mask-image:linear-gradient(to left, black 50%, transparent 78%);
+      mask-image:linear-gradient(to left, black 50%, transparent 78%);
     }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
@@ -766,17 +766,16 @@
       .hero-bullets{margin-bottom:20px;}
       .hero-price-row{margin-bottom:20px;}
 
-      /* Mobile: paineis acima da imagem, transparentes no centro */
-      .photo-side{ width:45%; opacity:.88; }
+      .photo-side{ width:45%; opacity:.9; }
       .photo-side-left{
         left:0;
-        -webkit-mask-image:linear-gradient(to right, black 25%, transparent 52%);
-        mask-image:linear-gradient(to right, black 25%, transparent 52%);
+        -webkit-mask-image:linear-gradient(to right, black 45%, transparent 72%);
+        mask-image:linear-gradient(to right, black 45%, transparent 72%);
       }
       .photo-side-right{
         right:0;
-        -webkit-mask-image:linear-gradient(to left, black 25%, transparent 52%);
-        mask-image:linear-gradient(to left, black 25%, transparent 52%);
+        -webkit-mask-image:linear-gradient(to left, black 45%, transparent 72%);
+        mask-image:linear-gradient(to left, black 45%, transparent 72%);
       }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
