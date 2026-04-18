@@ -779,22 +779,22 @@
         position:relative;
         z-index:1;
       }
-      /* Gradiente que funde só a base dos pés com o fundo verde */
+      /* Gradiente mais forte no bottom pra esconder o corte redondo do PNG */
       .hero-photo::after{
         content:'';
         position:absolute;
         bottom:0;left:0;right:0;
-        height:12%;
-        background:linear-gradient(to top, var(--green-deep) 10%, transparent 100%);
+        height:25%;
+        background:linear-gradient(to top, var(--green-deep) 30%, transparent 100%);
         pointer-events:none;
         z-index:2;
       }
 
-      /* Copy: sobe pra cima da foto com margem negativa */
+      /* Copy: sobe pra esconder a base cortada e colar nos braços */
       .hero-copy{
         position:relative;
         z-index:3;
-        margin-top:-30px;
+        margin-top:-90px;
         padding:0 18px 36px;
         background:transparent;
       }
