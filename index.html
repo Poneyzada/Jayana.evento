@@ -759,8 +759,16 @@
       .hero-bullets{margin-bottom:20px;}
       .hero-price-row{margin-bottom:20px;}
 
-      /* Esconde reflexos laterais no mobile — foto full-width nao comporta */
-      .photo-side{ display:none; }
+      /* Reflexos laterais no mobile — com mask pra nao cobrir o centro */
+      .photo-side{ width:45%; opacity:.5; }
+      .photo-side-left{
+        -webkit-mask-image:linear-gradient(to left, transparent 0%, black 40%);
+        mask-image:linear-gradient(to left, transparent 0%, black 40%);
+      }
+      .photo-side-right{
+        -webkit-mask-image:linear-gradient(to right, transparent 0%, black 40%);
+        mask-image:linear-gradient(to right, transparent 0%, black 40%);
+      }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
       .persona-grid-v2{grid-template-columns:1fr;}
@@ -1320,31 +1328,33 @@
       for (let i = 0; i < d.length; i += 4) {
         const r = d[i], g = d[i+1], b = d[i+2], a = d[i+3];
 
-        // Só mexe em pixels semi-transparentes (bordas do recorte)
-        if (a > 0 && a < 254) {
-          const bright = (r * 0.299 + g * 0.587 + b * 0.114); // luminância
-          const t = a / 255; // 0 = totalmente transp, 1 = opaco
+        if (a === 0 || a === 255) continue; // totalmente transp ou opaco: nao mexe
 
-          if (bright > 160) {
-            // Pixel brilhante na borda = halo branco → funde pro verde
-            const strength = 1 - t * 0.4; // quanto mais transparente, mais funde
-            d[i]   = Math.round(bgR + (r - bgR) * (1 - strength));
-            d[i+1] = Math.round(bgG + (g - bgG) * (1 - strength));
-            d[i+2] = Math.round(bgB + (b - bgB) * (1 - strength));
-            d[i+3] = Math.round(a * (t < 0.5 ? 0.4 : 0.75));
-          } else {
-            // Borda normal → pré-multiplica com fundo (remove fringe padrão)
-            d[i]   = Math.round(r * t + bgR * (1 - t));
-            d[i+1] = Math.round(g * t + bgG * (1 - t));
-            d[i+2] = Math.round(b * t + bgB * (1 - t));
-          }
+        const bright = (r * 0.299 + g * 0.587 + b * 0.114);
+        const t = a / 255;
+
+        if (a >= 180) {
+          // Pixel quase opaco (corpo, braços) — forca opacidade total
+          // para evitar que o verde do fundo apareça por dentro
+          d[i+3] = 255;
+        } else if (bright > 160) {
+          // Pixel brilhante de borda (halo branco) — funde pro verde
+          const strength = 1 - t * 0.4;
+          d[i]   = Math.round(bgR + (r - bgR) * (1 - strength));
+          d[i+1] = Math.round(bgG + (g - bgG) * (1 - strength));
+          d[i+2] = Math.round(bgB + (b - bgB) * (1 - strength));
+          d[i+3] = Math.round(a * (t < 0.5 ? 0.4 : 0.75));
+        } else {
+          // Borda normal — pré-multiplica com fundo
+          d[i]   = Math.round(r * t + bgR * (1 - t));
+          d[i+1] = Math.round(g * t + bgG * (1 - t));
+          d[i+2] = Math.round(b * t + bgB * (1 - t));
         }
       }
 
       ctx.putImageData(imgData, 0, 0);
       img.src = cvs.toDataURL('image/png');
     } catch(e) {
-      // Silencioso: se CORS bloquear, mantém imagem original
       console.warn('Fringe fix skipped:', e.message);
     }
   }
