@@ -232,15 +232,13 @@
     .photo-side-left{
       left:-5%;
       transform:scaleX(-1);
-      /* Funde pra transparent antes de chegar no centro */
-      -webkit-mask-image:linear-gradient(to left, transparent 0%, black 55%);
-      mask-image:linear-gradient(to left, transparent 0%, black 55%);
+      -webkit-mask-image:linear-gradient(to left, transparent 0%, black 70%);
+      mask-image:linear-gradient(to left, transparent 0%, black 70%);
     }
     .photo-side-right{
       right:-5%;
-      /* Funde pra transparent antes de chegar no centro */
-      -webkit-mask-image:linear-gradient(to right, transparent 0%, black 55%);
-      mask-image:linear-gradient(to right, transparent 0%, black 55%);
+      -webkit-mask-image:linear-gradient(to right, transparent 0%, black 70%);
+      mask-image:linear-gradient(to right, transparent 0%, black 70%);
     }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
@@ -762,12 +760,12 @@
       /* Reflexos laterais no mobile — com mask pra nao cobrir o centro */
       .photo-side{ width:45%; opacity:.5; }
       .photo-side-left{
-        -webkit-mask-image:linear-gradient(to left, transparent 0%, black 40%);
-        mask-image:linear-gradient(to left, transparent 0%, black 40%);
+        -webkit-mask-image:linear-gradient(to left, transparent 0%, black 65%);
+        mask-image:linear-gradient(to left, transparent 0%, black 65%);
       }
       .photo-side-right{
-        -webkit-mask-image:linear-gradient(to right, transparent 0%, black 40%);
-        mask-image:linear-gradient(to right, transparent 0%, black 40%);
+        -webkit-mask-image:linear-gradient(to right, transparent 0%, black 65%);
+        mask-image:linear-gradient(to right, transparent 0%, black 65%);
       }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
