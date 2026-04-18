@@ -223,14 +223,14 @@
     /* Reflexos laterais — atras da foto, cinza escuro */
     .photo-side{
       position:absolute;
-      top:0;bottom:0;width:45%;
+      top:0;bottom:0;width:35%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
       filter:blur(3px) brightness(.60) saturate(.15);
       opacity:1;
       z-index:0;
     }
-    .photo-side-left{ left:0; transform:scaleX(-1); }
-    .photo-side-right{ right:0; }
+    .photo-side-left{ left:-5%; transform:scaleX(-1); }
+    .photo-side-right{ right:-5%; }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -270,9 +270,9 @@
 
     .hero-photo img{
       position:relative;z-index:3;
-      width:100%;max-height:92vh;
+      width:75%;max-height:92vh;margin:0 auto;
       object-fit:contain;object-position:center bottom;display:block;
-      transform:translateX(-5%);
+      transform:translateX(-3%);
       filter:
         url(#fringe-fix)
         drop-shadow(0 0 2px #142b1e)
@@ -289,6 +289,14 @@
       width:80%;height:60px;
       background:radial-gradient(ellipse,rgba(184,134,42,.2),transparent 70%);
       filter:blur(20px);z-index:4;
+    }
+    /* Base solida pra esconder o recorte do braço na foto original */
+    .photo-bottom-cover{
+      position:absolute;
+      bottom:0;left:0;right:0;
+      height:12%;
+      background:linear-gradient(to top, var(--green-deep) 30%, transparent 100%);
+      z-index:5;
     }
 
     /* ─── MARQUEE ─── */
@@ -764,9 +772,9 @@
         min-height:auto;
       }
 
-      /* Foto: aparece primeiro, altura generosa pro corpo aparecer */
+      /* Foto: aparece primeiro, mais contida pro corpo não cobrir as laterais */
       .hero-photo{
-        height:115vw;
+        height:100vw;
         order:-1;
         position:relative;
         z-index:1;
@@ -782,11 +790,11 @@
         z-index:2;
       }
 
-      /* Copy: sobe pra cruzar os botões na cintura e o texto na perna dela */
+      /* Copy: sobe pra cruzar os botões na cintura */
       .hero-copy{
         position:relative;
-        z-index:3;
-        margin-top:-90px;
+        z-index:6;
+        margin-top:-70px;
         padding:0 18px 36px;
         background:transparent;
       }
