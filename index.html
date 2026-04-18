@@ -218,10 +218,9 @@
       display:flex;align-items:flex-end;justify-content:center;
       overflow:hidden;
       height:100%;
-      min-height:calc(100vh - 64px);
     }
 
-    /* Reflexos laterais — acima da imagem, só nas bordas */
+    /* Reflexos laterais — atras da foto, cinza escuro */
     .photo-side{
       position:absolute;
       top:0;bottom:0;width:45%;
@@ -230,18 +229,8 @@
       opacity:.95;
       z-index:0;
     }
-    .photo-side-left{
-      left:0;
-      transform:scaleX(-1);
-      /* Sólido na borda, transparente no centro (onde fica o corpo) */
-      -webkit-mask-image:linear-gradient(to right, black 50%, transparent 78%);
-      mask-image:linear-gradient(to right, black 50%, transparent 78%);
-    }
-    .photo-side-right{
-      right:0;
-      -webkit-mask-image:linear-gradient(to left, black 50%, transparent 78%);
-      mask-image:linear-gradient(to left, black 50%, transparent 78%);
-    }
+    .photo-side-left{ left:0; transform:scaleX(-1); }
+    .photo-side-right{ right:0; }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -309,8 +298,8 @@
     .photo-bottom-cover{
       position:absolute;
       bottom:0;left:0;right:0;
-      height:40%;
-      background:linear-gradient(to top, var(--green-deep) 0%, transparent 100%);
+      height:20%;
+      background:linear-gradient(to top, var(--green-deep) 20%, transparent 100%);
       z-index:3;
       pointer-events:none;
     }
