@@ -107,8 +107,7 @@
     .hero-wrap::before{
       content:'';position:absolute;top:0;left:0;right:0;bottom:0;
       background:
-        radial-gradient(ellipse at 80% 50%, rgba(184,134,42,.12) 0%, transparent 55%),
-        radial-gradient(ellipse at 20% 80%, rgba(45,104,73,.4) 0%, transparent 50%);
+        radial-gradient(ellipse at 80% 50%, rgba(184,134,42,.12) 0%, transparent 55%);
       pointer-events:none;
     }
     .hero{
@@ -218,19 +217,30 @@
       position:relative;
       display:flex;align-items:flex-end;justify-content:center;
       overflow:hidden;
+      height:100%;
+      min-height:calc(100vh - 64px);
     }
 
-    /* Reflexos laterais — ficam só nas bordas (nao chegam no corpo) */
+    /* Reflexos laterais — 45% de largura, sólidos na borda, funde antes dos braços */
     .photo-side{
       position:absolute;
-      top:0;bottom:0;width:25%;
+      top:0;bottom:0;width:45%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
-      filter:blur(7px) brightness(.5) saturate(.45);
-      opacity:.9;
+      filter:blur(6px) brightness(.45) saturate(.45);
+      opacity:.92;
       z-index:0;
     }
-    .photo-side-left{ left:0; transform:scaleX(-1); }
-    .photo-side-right{ right:0; }
+    .photo-side-left{
+      left:0;
+      transform:scaleX(-1);
+      -webkit-mask-image:linear-gradient(to right, black 25%, transparent 60%);
+      mask-image:linear-gradient(to right, black 25%, transparent 60%);
+    }
+    .photo-side-right{
+      right:0;
+      -webkit-mask-image:linear-gradient(to left, black 25%, transparent 60%);
+      mask-image:linear-gradient(to left, black 25%, transparent 60%);
+    }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -746,10 +756,18 @@
       .hero-bullets{margin-bottom:20px;}
       .hero-price-row{margin-bottom:20px;}
 
-      /* Reflexos laterais no mobile — bordas finas, nao chegam no corpo */
-      .photo-side{ width:28%; opacity:.82; }
-      .photo-side-left{ left:0; }
-      .photo-side-right{ right:0; }
+      /* Reflexos laterais no mobile — 45% com fade nos braços */
+      .photo-side{ width:45%; opacity:.85; }
+      .photo-side-left{
+        left:0;
+        -webkit-mask-image:linear-gradient(to right, black 20%, transparent 60%);
+        mask-image:linear-gradient(to right, black 20%, transparent 60%);
+      }
+      .photo-side-right{
+        right:0;
+        -webkit-mask-image:linear-gradient(to left, black 20%, transparent 60%);
+        mask-image:linear-gradient(to left, black 20%, transparent 60%);
+      }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
       .persona-grid-v2{grid-template-columns:1fr;}
