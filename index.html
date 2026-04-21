@@ -225,7 +225,7 @@
       position:absolute;
       top:0;bottom:0;width:35%;
       background:url('dra.jayana.png.png') center/contain no-repeat;
-      filter:blur(3px) brightness(.60) saturate(.15);
+      filter:blur(1.5px) brightness(.60) saturate(.15);
       opacity:1;
       z-index:0;
     }
@@ -272,6 +272,7 @@
       position:relative;z-index:3;
       width:75%;height:auto;max-height:92vh;margin:0 auto;
       object-fit:contain;object-position:center bottom;display:block;
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
     }
     .hero-photo-glow{
       position:absolute;bottom:0;left:50%;transform:translateX(-50%);
@@ -723,7 +724,7 @@
       .hero-bullets{margin-bottom:20px;}
       .hero-price-row{margin-bottom:20px;}
 
-      .photo-side{ width:45%; opacity:.9; filter:blur(7px) brightness(.42) saturate(0); }
+      .photo-side{ width:45%; opacity:.9; filter:blur(2px) brightness(.42) saturate(0); }
       .beliefs-grid{grid-template-columns:1fr 1fr;}
       .dark-inner,.enemy-inner{grid-template-columns:1fr;}
       .persona-grid-v2{grid-template-columns:1fr;}
@@ -794,22 +795,7 @@
 </head>
 <body>
 
-<!-- Filtro SVG inline pra suavizar borda branca do recorte Photoshop -->
-<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-  <defs>
-    <filter id="fringe-fix" color-interpolation-filters="sRGB">
-      <!-- Erode ligeiramente as bordas para puxar pixels brancos pra dentro -->
-      <feMorphology operator="erode" radius="0.8" in="SourceGraphic" result="eroded"/>
-      <!-- Dilata de volta com a cor do fundo aderida -->
-      <feGaussianBlur stdDeviation="0.6" in="eroded" result="blurred"/>
-      <!-- Composita: pixel original sobre o blur eroded -->
-      <feComposite in="SourceGraphic" in2="blurred" operator="atop" result="composited"/>
-      <!-- Empurra ligeiramente as bordas sem destruir interior -->
-      <feBlend in="composited" in2="blurred" mode="multiply" result="blended"/>
-      <feComposite in="SourceGraphic" in2="blended" operator="atop"/>
-    </filter>
-  </defs>
-</svg>
+
 
 <!-- ══════════ TOP BAR ══════════ -->
 <nav class="topbar">
@@ -1234,13 +1220,13 @@
 <!-- ══════════ FOOTER (verde escuro) ══════════ -->
 <footer>
   <div class="footer-logo">Jayana</div>
-  <p class="footer-note">O Despertar do Dinheiro Rápido na Sua Vida · Evento Online Ao Vivo · 03 de Maio de 2025<br/>Todos os direitos reservados.</p>
+  <p class="footer-note">O Despertar do Dinheiro Rápido na Sua Vida · Evento Online Ao Vivo · 03 de Maio de 2026<br/>Todos os direitos reservados.</p>
   <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);">
     <p style="font-size:.72rem;color:rgba(255,255,255,.32);line-height:2;text-align:center;">
       <strong style="color:rgba(255,255,255,.48);">Instituto Viva Espiritualidade LTDA</strong><br/>
-      CNPJ: 51.655.564/0001-01 &nbsp;·&nbsp; Situação: Ativa<br/>
-      Av. Getúlio Vargas, 799 — Centro · Feira de Santana/BA · CEP 44.001-325<br/>
-      Este site não é afiliado ao Facebook™ ou ao Google™. Os resultados podem variar de pessoa para pessoa.<br/>
+      CNPJ: 51.655.564/0001-01<br/>
+      <br/>
+      Os resultados podem variar de pessoa para pessoa.<br/>
       Ao acessar este site você concorda com nossa Política de Privacidade e Termos de Uso.
     </p>
   </div>
@@ -1263,65 +1249,7 @@
       : 'none';
   });
 
-  // ── FRINGE REMOVAL ──
-  // Processa pixels semi-transparentes brancos (borda do recorte Photoshop)
-  // e os funde com a cor do fundo verde escuro para sumir o halo branco.
-  function removeFringe(img) {
-    try {
-      const cvs = document.createElement('canvas');
-      cvs.width  = img.naturalWidth;
-      cvs.height = img.naturalHeight;
-      const ctx  = cvs.getContext('2d');
-      ctx.drawImage(img, 0, 0);
 
-      const imgData = ctx.getImageData(0, 0, cvs.width, cvs.height);
-      const d = imgData.data;
-
-      // Cor do fundo: --green-deep #142b1e
-      const bgR = 20, bgG = 43, bgB = 30;
-
-      for (let i = 0; i < d.length; i += 4) {
-        const r = d[i], g = d[i+1], b = d[i+2], a = d[i+3];
-
-        if (a === 0 || a === 255) continue; // totalmente transp ou opaco: nao mexe
-
-        const bright = (r * 0.299 + g * 0.587 + b * 0.114);
-        const t = a / 255;
-
-        if (a >= 180) {
-          // Pixel quase opaco (corpo, braços) — forca opacidade total
-          // para evitar que o verde do fundo apareça por dentro
-          d[i+3] = 255;
-        } else if (bright > 160) {
-          // Pixel brilhante de borda (halo branco) — funde pro verde
-          const strength = 1 - t * 0.4;
-          d[i]   = Math.round(bgR + (r - bgR) * (1 - strength));
-          d[i+1] = Math.round(bgG + (g - bgG) * (1 - strength));
-          d[i+2] = Math.round(bgB + (b - bgB) * (1 - strength));
-          d[i+3] = Math.round(a * (t < 0.5 ? 0.4 : 0.75));
-        } else {
-          // Borda normal — pré-multiplica com fundo
-          d[i]   = Math.round(r * t + bgR * (1 - t));
-          d[i+1] = Math.round(g * t + bgG * (1 - t));
-          d[i+2] = Math.round(b * t + bgB * (1 - t));
-        }
-      }
-
-      ctx.putImageData(imgData, 0, 0);
-      img.src = cvs.toDataURL('image/png');
-    } catch(e) {
-      console.warn('Fringe fix skipped:', e.message);
-    }
-  }
-
-  const heroImg = document.querySelector('.hero-photo img');
-  if (heroImg) {
-    if (heroImg.complete && heroImg.naturalWidth) {
-      removeFringe(heroImg);
-    } else {
-      heroImg.addEventListener('load', () => removeFringe(heroImg));
-    }
-  }
 </script>
 </body>
 </html>
