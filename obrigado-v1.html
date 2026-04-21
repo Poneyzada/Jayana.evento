@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscrição Confirmada | Jayana Financeiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+    :root{
+      --green-deep:   #142b1e;
+      --green:        #1a3829;
+      --green-mid:    #22503a;
+      --gold:         #b8862a;
+      --gold-mid:     #c9a04a;
+      --gold-light:   #dbb968;
+      --gold-bright:  #f0d48a;
+      --bg:           #f8f6f0;
+      --bg-warm:      #f2efe8;
+      --text:         #1a1a1a;
+      --text-soft:    #3d3d3d;
+      --white:        #ffffff;
+    }
+
+    body{
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Noise texture */
+    body::after{
+      content:'';
+      position:fixed;inset:0;z-index:9999;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:.02;
+    }
+
+    .container{
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .logo{
+      font-family:'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 40px;
+      letter-spacing: 0.05em;
+    }
+
+    .congrats-tag{
+      display: inline-block;
+      background: rgba(184, 134, 42, 0.1);
+      border: 1px solid rgba(184, 134, 42, 0.3);
+      color: var(--gold);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1{
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--green-deep);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .subtitle{
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: var(--text-soft);
+      font-style: italic;
+      margin-bottom: 48px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    /* Progress Bar */
+    .progress-wrapper{
+      max-width: 400px;
+      margin: 0 auto 60px;
+    }
+    .progress-label{
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .progress-bar{
+      width: 100%;
+      height: 12px;
+      background: rgba(20, 43, 30, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill{
+      position: absolute;
+      top: 0; left: 0; height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+      border-radius: 20px;
+      transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+      box-shadow: 0 0 15px rgba(184, 134, 42, 0.4);
+    }
+
+    /* Warning/Next Step Card */
+    .next-step-card{
+      background: var(--green);
+      border-radius: 24px;
+      padding: 40px 32px;
+      color: var(--white);
+      text-align: left;
+      box-shadow: 0 20px 50px rgba(26, 56, 41, 0.15);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .next-step-card::before{
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 150px; height: 150px;
+      background: radial-gradient(circle, rgba(184, 134, 42, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .attention-badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-bright);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+    .attention-badge span{
+      font-size: 1.2rem;
+    }
+
+    .step-title{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .step-text{
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* Button */
+    .btn-whatsapp{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      text-decoration: none;
+      padding: 20px 32px;
+      border-radius: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pulse 2s infinite;
+    }
+    .btn-whatsapp:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    }
+    .btn-whatsapp svg{
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    footer{
+      padding: 40px 24px;
+      border-top: 1px solid rgba(26, 56, 41, 0.1);
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      opacity: 0.6;
+    }
+
+    @media(max-width: 600px){
+      .container{ padding: 40px 20px; }
+      h1{ font-size: 1.8rem; }
+      .next-step-card{ padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">Jayana</div>
+    
+    <div class="congrats-tag">✨ Inscrição Realizada ✨</div>
+    
+    <h1>Parabéns pela sua inscrição!</h1>
+    
+    <p class="subtitle">
+      Agora você está a um passo de garantir seu lugar na aula do <strong>Despertar do Dinheiro Rápido</strong> na sua vida.
+    </p>
+
+    <div class="progress-wrapper">
+      <div class="progress-label">
+        <span>Progresso da Inscrição</span>
+        <span>80%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="fill"></div>
+      </div>
+    </div>
+
+    <div class="next-step-card">
+      <div class="attention-badge">
+        <span>🔔</span> ATENÇÃO:
+      </div>
+      
+      <h2 class="step-title">Passo 01</h2>
+      
+      <p class="step-text">
+        Criamos um grupo oficial no WhatsApp para avisos importantes, conteúdos exclusivos e o envio do link da nossa aula. Fique atento e não perca nada! Separamos presentes especiais que serão enviados por lá.
+      </p>
+
+      <a href="https://chat.whatsapp.com/FASFyep1E1GBegACE1GxW7?mode=gi_t" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-2.32 0-4.518.892-6.193 2.518-3.326 3.226-3.414 8.544-.202 11.879l-1.127 4.12 4.254-1.109c1.025.556 2.193.851 3.424.851h.004c4.697 0 8.523-3.784 8.523-8.442.001-4.658-3.83-8.522-8.527-8.522l-.156.004zm5.553 11.954c-.234.646-1.168 1.189-1.611 1.25-.444.06-1.025.105-2.903-.615-2.404-.925-3.929-3.344-4.049-3.504-.12-.16-1.01-1.326-1.01-2.528s.624-1.792.845-2.034c.22-.24.481-.301.642-.301s.32.001.46.008c.147.007.345-.054.542.414.2.47.683 1.644.743 1.764.06.12.099.259.02.414-.079.155-.12.259-.24.398-.12.139-.25.311-.358.416-.12.12-.245.251-.105.489.141.238.625 1.018 1.339 1.643.918.804 1.691 1.052 1.931 1.173.239.12.38.102.521-.059.141-.161.601-.692.763-.928.161-.235.32-.199.54-.121.22.079 1.399.653 1.639.771.24.118.4.179.46.28.06.101.06.58-.174 1.226z"/></svg>
+        Entrar no Grupo VIP do WhatsApp
+      </a>
+    </div>
+
+    <footer>
+      Jayana Financeiro &copy; 2026 · Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('fill').style.width = '80%';
+      }, 500);
+    });
+  </script>
+</body>
+</html>
