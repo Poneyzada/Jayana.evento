@@ -274,7 +274,9 @@
       position:relative;z-index:3;
       width:85%;height:auto;max-height:88vh;margin:0 auto;
       object-fit:contain;object-position:center bottom;
-      filter: drop-shadow(0 0 20px rgba(184, 134, 42, 0.4));
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 90%);
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 90%);
+      filter: drop-shadow(0 0 30px rgba(184, 134, 42, 0.25));
       display:block;
     }
     .hero-photo-glow{
