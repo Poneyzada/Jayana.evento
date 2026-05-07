@@ -13,33 +13,42 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
     :root{
-      /* ── VERDE GOLF ── */
-      --green-deep:   #142b1e;
-      --green:        #1a3829;
-      --green-mid:    #22503a;
-      --green-light:  #2d6849;
-      --green-subtle: rgba(26,56,41,.08);
-      --green-border: rgba(26,56,41,.18);
+      /* ── ROXO PROFUNDO (Espiritualidade + Poder) ── */
+      --purple-deep:  #1a0b2e;
+      --purple:       #2d1254;
+      --purple-mid:   #3d1b5d;
+      --purple-light: #5a2d8c;
+      --purple-subtle: rgba(45, 18, 84, 0.08);
+      --purple-border: rgba(45, 18, 84, 0.18);
 
-      /* ── DOURADO ── */
+      /* ── DOURADO (Prosperidade + Autoridade) ── */
       --gold:         #b8862a;
       --gold-mid:     #c9a04a;
       --gold-light:   #dbb968;
       --gold-bright:  #f0d48a;
-      --gold-subtle:  rgba(184,134,42,.1);
-      --gold-border:  rgba(184,134,42,.25);
+      --gold-subtle:  rgba(184,134,42,0.1);
+      --gold-border:  rgba(184,134,42,0.25);
 
-      /* ── FUNDO CLARO ── */
-      --bg:           #f8f6f0;
-      --bg-warm:      #f2efe8;
+      /* ── NUDE / BEGE (Acolhimento) ── */
+      --bg:           #f4ece6;
+      --bg-warm:      #ede4dc;
       --bg-card:      #ffffff;
-      --bg-section:   #eeebe2;
+      --bg-section:   #e8ded5;
 
-      /* ── TEXTO ── */
-      --text:         #1a1a1a;
-      --text-soft:    #3d3d3d;
-      --text-muted:   #7a7a72;
+      /* ── TEXTO E GRAFITE ── */
+      --text:         #121212;
+      --text-soft:    #2a2a2a;
+      --text-muted:   #5c5c5c;
+      --graphite:     #1f1f1f;
       --white:        #ffffff;
+
+      /* Mapeamento de compatibilidade para não quebrar o CSS antigo */
+      --green-deep:   var(--purple-deep);
+      --green:        var(--purple);
+      --green-mid:    var(--purple-mid);
+      --green-light:  var(--purple-light);
+      --green-subtle: var(--purple-subtle);
+      --green-border: var(--purple-border);
     }
 
     html{scroll-behavior:auto;}
@@ -353,10 +362,11 @@
     }
     .phrase-badge{
       display:inline-flex;align-items:center;gap:10px;
-      background:var(--green-subtle);
-      border:1px solid var(--green-border);
-      border-radius:100px;padding:12px 28px;
-      font-size:.82rem;font-weight:600;color:var(--green);
+      padding:4px 0;
+      font-size:.85rem;font-weight:700;color:var(--purple);
+      border-bottom: 2px solid var(--gold-border);
+      border-radius: 0;
+      background: transparent;
     }
 
     /* ─── CARDS DE CRENÇAS (fundo branco) ─── */
@@ -801,13 +811,13 @@
 <nav class="topbar">
   <div class="topbar-logo">Jayana Ribeiro</div>
   <div class="topbar-info">
-    <span>📅 <strong>24 de Maio</strong></span>
-    <span>🕘 <strong>19h da noite</strong></span>
-    <span>💻 Online · Google Meet</span>
+    <span>📅 24 de Maio • 19h</span>
+    <span>👉 Ao Vivo no Meet</span>
+    <span>🔒 R$197 por R$27</span>
   </div>
   <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="topbar-live">
     <div class="live-dot"></div>
-    Garantir Vaga · R$27
+    QUERO DESBLOQUEAR DINHEIRO
   </a>
 </nav>
 
@@ -815,28 +825,24 @@
 <div class="hero-wrap">
   <div class="hero">
     <div class="hero-copy">
-      <div class="hero-eyebrow">✦ DESAFIO ONLINE AO VIVO · 24 DE MAIO ✦</div>
-      <h1 class="hero-title">
-        Destrave sua
-        <span class="gold-text">Mediunidade</span>
-        e Ative sua Prosperidade
+      <div class="hero-eyebrow">✦ 📅 24 de Maio • 19h ✦</div>
+      <h1 class="hero-title" style="text-transform: uppercase;">
+        DESAFIO - Destrave sua mediunidade e ative sua prosperidade
       </h1>
       <p class="hero-sub">
         Descubra por que você continua sem dinheiro mesmo se esforçando e como desbloquear sua mediunidade pode fazer sua vida prosperar todos os dias.
       </p>
       <ul class="hero-bullets">
-        <li><div class="bullet-check">✓</div> Entenda por que você se sabota financeiramente</li>
-        <li><div class="bullet-check">✓</div> O que está bloqueando sua mediunidade hoje</li>
-        <li><div class="bullet-check">✓</div> Como voltar a se escutar com clareza</li>
-        <li><div class="bullet-check">✓</div> Alinhamento com oportunidades reais</li>
+        <li><div class="bullet-check">📅</div> 24 de Maio • 19h</li>
+        <li><div class="bullet-check">👉</div> Ao Vivo no Meet</li>
+        <li><div class="bullet-check">🔒</div> Acesso imediato de R$197 por R$27</li>
       </ul>
       <div class="hero-price-row">
         <span class="hero-price-old">De R$ 197</span>
         <span class="hero-price-arrow">→</span>
         <span class="hero-price-new">R$&nbsp;27</span>
-        <span class="hero-price-tag">acesso imediato<br/>vagas limitadas</span>
       </div>
-      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="hero-cta">✨ QUERO DESBLOQUEAR DINHEIRO NA MINHA VIDA</a>
+      <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="hero-cta">🔘 QUERO DESBLOQUEAR DINHEIRO NA MINHA VIDA</a>
     </div>
     <div class="hero-photo">
       <div class="photo-side photo-side-left"></div>
@@ -878,9 +884,19 @@
     <div class="reveal">
       <h2 class="phrase-title">
         Existe um motivo específico pra sua vida não fluir.<br/>
-        E ele tem nome: <em>Bloqueio da sua Essência Mediúnica</em>.
+        E ele tem nome: <span class="gold-t">Bloqueio da sua Essência Mediúnica</span>
       </h2>
-      <div class="phrase-badge">🔍 Você não está travada, você está desconectada.</div>
+      <div class="phrase-badge">Você não está travada, você está desconectada daquilo que deveria te guiar.</div>
+      
+      <div style="margin-top: 30px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text-soft);">
+        <p style="font-weight: 700; margin-bottom: 15px; color: var(--purple);">E isso está custando:</p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 10px;">📉 Dinheiro que nunca fica na sua vida</li>
+          <li style="margin-bottom: 10px;">🥀 Oportunidades que não se sustentam</li>
+          <li style="margin-bottom: 10px;">💔 Relações que te drenam e te colocam pra baixo</li>
+        </ul>
+        <p style="margin-top: 25px; font-style: italic; font-weight: 600;">E o pior? Você sente mas ignora.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -897,45 +913,31 @@
 
     <div class="beliefs-grid reveal">
       <div class="belief-card">
-        <div class="belief-icon">💭</div>
-        <div>
-          <span class="belief-label">Desconexão</span>
-          <p class="belief-text">Duvidar do que sente e ignorar sua própria intuição todos os dias.</p>
-        </div>
-      </div>
-      <div class="belief-card">
-        <div class="belief-icon">📉</div>
-        <div>
-          <span class="belief-label">Instabilidade</span>
-          <p class="belief-text">Dinheiro que nunca fica na sua vida e oportunidades que não se sustentam.</p>
-        </div>
-      </div>
-      <div class="belief-card">
-        <div class="belief-icon">🥀</div>
-        <div>
-          <span class="belief-label">Drenagem</span>
-          <p class="belief-text">Relações que te drenam e te colocam pra baixo constantemente.</p>
-        </div>
-      </div>
-      <div class="belief-card">
         <div class="belief-icon">⚠️</div>
         <div>
-          <span class="belief-label">Arrependimento</span>
-          <p class="belief-text">Tomar decisões baseadas no medo que você se arrepende logo depois.</p>
+          <span class="belief-label">Ciclo de Perda</span>
+          <p class="belief-text">Duvidar do que sente, ignorar sua intuição e se adaptar ao que não é pra você.</p>
         </div>
       </div>
       <div class="belief-card">
-        <div class="belief-icon">😶</div>
+        <div class="belief-icon">🌀</div>
         <div>
-          <span class="belief-label">Omissão</span>
-          <p class="belief-text">Sentir que algo está errado, mas escolher ignorar os sinais da sua alma.</p>
+          <span class="belief-label">Desalinhamento</span>
+          <p class="belief-text">Sua vida continua desalinhada e o dinheiro nunca se sustenta.</p>
         </div>
       </div>
       <div class="belief-card">
-        <div class="belief-icon">🔄</div>
+        <div class="belief-icon">🚫</div>
         <div>
-          <span class="belief-label">Ciclo Vicioso</span>
-          <p class="belief-text">Viver em uma vida de tentativa, erro e frustração sem fim.</p>
+          <span class="belief-label">Desconexão</span>
+          <p class="belief-text">Você foi desconectada de sentir com clareza, perceber antes de errar e confiar na sua intuição.</p>
+        </div>
+      </div>
+      <div class="belief-card" style="grid-column: 1 / -1; background: var(--purple-subtle); border-color: var(--purple-border);">
+        <div class="belief-icon">❌</div>
+        <div>
+          <span class="belief-label">O Resultado</span>
+          <p class="belief-text" style="font-weight: 700; color: var(--purple-deep);">E isso gerou: Uma vida de tentativa, erro e frustração.</p>
         </div>
       </div>
     </div>
@@ -1036,29 +1038,29 @@
 
 <hr class="gold-hr"/>
 
-<!-- ══════════ O QUE VOCÊ VAI ENTENDER (verde escuro) ══════════ -->
+<!-- ══════════ DOBRA 4 (verde escuro) ══════════ -->
 <section class="levels-section">
   <div class="section-wrap">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;color:var(--gold-light);"><span class="tag-line" style="background:var(--gold-light)"></span>A Grade do Desafio<span class="tag-line" style="background:var(--gold-light)"></span></div>
-      <h2 class="section-title" style="color:var(--white);text-align:center;">O Que Você Vai <span class="gold-t">Aprender</span></h2>
-      <p class="section-lead">Neste desafio, você vai entender exatamente onde está o erro.<br/>Com <strong style="color:rgba(255,255,255,.85)">clareza, verdade e técnica</strong>.</p>
+      <h2 class="section-title" style="color:var(--white);text-align:center;">🔥 É exatamente isso que você vai entender no:</h2>
+      <p class="section-lead">DESAFIO - Destrave sua mediunidade e ative sua prosperidade<br/>Com <strong style="color:rgba(255,255,255,.85)">clareza, verdade e técnica</strong>.</p>
     </div>
     <div class="level-grid reveal">
       <div class="level-card">
         <div class="level-num">✔️</div>
         <h3>Sabotagem Financeira</h3>
-        <p>Por que você se sabota financeiramente mesmo tentando acertar e se esforçando tanto.</p>
+        <p>Por que você se sabota financeiramente (mesmo tentando acertar).</p>
       </div>
       <div class="level-card">
         <div class="level-num">✔️</div>
-        <h3>Bloqueio Mediúnico</h3>
+        <h3>Bloqueio Atual</h3>
         <p>O que está bloqueando sua mediunidade hoje e como voltar a se escutar com clareza.</p>
       </div>
       <div class="level-card">
         <div class="level-num">✔️</div>
-        <h3>Alinhamento Real</h3>
-        <p>Como parar de tomar decisões que te fazem perder dinheiro e se alinhar com oportunidades reais.</p>
+        <h3>Decisões Reais</h3>
+        <p>Como parar de tomar decisões que te fazem perder dinheiro e começar a se alinhar com oportunidades reais.</p>
       </div>
     </div>
     <div class="reveal" style="text-align:center;">
