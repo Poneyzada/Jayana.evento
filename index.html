@@ -231,8 +231,17 @@
     }
 
     /* Reflexos laterais — atras da foto, cinza escuro */
-    /* Removido reflexos laterais para a nova foto com fundo */
-    .photo-side{ display: none; }
+    /* Reflexos laterais reativados para a nova foto */
+    .photo-side{
+      position:absolute;
+      top:0;bottom:0;width:35%;
+      background:url('jayana-nova.jpg') center/cover no-repeat;
+      filter:blur(3px) brightness(.5) saturate(.3);
+      opacity:.8;
+      z-index:0;
+    }
+    .photo-side-left{ left:-10%; transform:scaleX(-1); }
+    .photo-side-right{ right:-10%; }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -744,10 +753,12 @@
        MOBILE — até 600px (celular)
     ===================================================== */
     @media(max-width:600px){
-
-      /* Topbar: esconde infos e compacta */
-      .topbar{padding:0 16px;}
+      .topbar{padding:0 12px;height:56px;}
+      .topbar-logo{font-size:1rem;}
       .topbar-info{display:none;}
+      .topbar-live{padding:8px 12px;font-size:0.6rem;letter-spacing:0.02em;}
+      
+      .hero-wrap{padding-top:100px;min-height:auto;}
 
       /* Hero vira flex coluna com overlap */
       .hero{
@@ -842,8 +853,12 @@
       <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="hero-cta">🔘 QUERO DESBLOQUEAR DINHEIRO NA MINHA VIDA</a>
     </div>
     <div class="hero-photo">
+      <div class="photo-side photo-side-left"></div>
+      <div class="photo-side photo-side-right"></div>
       <div class="photo-glow"></div>
+      <div class="photo-streaks"></div>
       <img src="jayana-nova.jpg" alt="Jayana Ribeiro" loading="eager"/>
+      <div class="photo-vignette"></div>
       <div class="hero-photo-glow"></div>
     </div>
   </div>
