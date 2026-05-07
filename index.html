@@ -234,14 +234,14 @@
     /* Reflexos laterais reativados para a nova foto */
     .photo-side{
       position:absolute;
-      top:0;bottom:0;width:35%;
+      top:0;bottom:0;width:50%;
       background:url('jayana-nova.jpg') center/cover no-repeat;
-      filter:blur(3px) brightness(.5) saturate(.3);
-      opacity:.8;
+      filter:blur(6px) brightness(.4) saturate(.2);
+      opacity:.6;
       z-index:0;
     }
-    .photo-side-left{ left:-10%; transform:scaleX(-1); }
-    .photo-side-right{ right:-10%; }
+    .photo-side-left{ left:-15%; transform:scaleX(-1); }
+    .photo-side-right{ right:-15%; }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -281,10 +281,10 @@
 
     .hero-photo img{
       position:relative;z-index:3;
-      width:90%;height:auto;max-height:85vh;margin:0 auto;
-      object-fit:cover;border-radius:12px;
-      border: 3px solid var(--gold-border);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px var(--gold-subtle);
+      width:100%;height:auto;max-height:85vh;margin:0 auto;
+      object-fit:cover;
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 95%);
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 95%);
       display:block;
     }
     .hero-photo-glow{
