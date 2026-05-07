@@ -231,16 +231,8 @@
     }
 
     /* Reflexos laterais — atras da foto, cinza escuro */
-    .photo-side{
-      position:absolute;
-      top:0;bottom:0;width:35%;
-      background:url('dra.jayana.png.png') center/contain no-repeat;
-      filter:blur(1.5px) brightness(.60) saturate(.15);
-      opacity:1;
-      z-index:0;
-    }
-    .photo-side-left{ left:-5%; transform:scaleX(-1); }
-    .photo-side-right{ right:-5%; }
+    /* Removido reflexos laterais para a nova foto com fundo */
+    .photo-side{ display: none; }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -280,9 +272,11 @@
 
     .hero-photo img{
       position:relative;z-index:3;
-      width:75%;height:auto;max-height:92vh;margin:0 auto;
-      object-fit:contain;object-position:center bottom;display:block;
-      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+      width:90%;height:auto;max-height:85vh;margin:0 auto;
+      object-fit:cover;border-radius:12px;
+      border: 3px solid var(--gold-border);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px var(--gold-subtle);
+      display:block;
     }
     .hero-photo-glow{
       position:absolute;bottom:0;left:50%;transform:translateX(-50%);
@@ -848,12 +842,8 @@
       <a href="SEU-LINK-DE-PAGAMENTO-AQUI" target="_blank" rel="noopener" class="btn-main" id="hero-cta">🔘 QUERO DESBLOQUEAR DINHEIRO NA MINHA VIDA</a>
     </div>
     <div class="hero-photo">
-      <div class="photo-side photo-side-left"></div>
-      <div class="photo-side photo-side-right"></div>
       <div class="photo-glow"></div>
-      <div class="photo-streaks"></div>
-      <img src="dra.jayana.png.png" alt="Dra. Jayana — Especialista em Desbloqueio Financeiro" loading="eager"/>
-      <div class="photo-vignette"></div>
+      <img src="jayana-nova.jpg" alt="Jayana Ribeiro" loading="eager"/>
       <div class="hero-photo-glow"></div>
     </div>
   </div>
