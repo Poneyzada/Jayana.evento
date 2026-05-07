@@ -234,14 +234,14 @@
     /* Reflexos laterais reativados para a nova foto */
     .photo-side{
       position:absolute;
-      top:0;bottom:0;width:50%;
-      background:url('jayana-nova.jpg') center/cover no-repeat;
-      filter:blur(6px) brightness(.4) saturate(.2);
-      opacity:.6;
+      top:0;bottom:0;width:45%;
+      background:url('jayana-nova.png') center/contain no-repeat;
+      filter:blur(4px) brightness(.4) saturate(.15);
+      opacity:.7;
       z-index:0;
     }
-    .photo-side-left{ left:-15%; transform:scaleX(-1); }
-    .photo-side-right{ right:-15%; }
+    .photo-side-left{ left:-10%; transform:scaleX(-1); }
+    .photo-side-right{ right:-10%; }
 
     /* Raios de luz dourada verticais nas bordas da foto central */
     .photo-streaks{
@@ -281,10 +281,9 @@
 
     .hero-photo img{
       position:relative;z-index:3;
-      width:100%;height:auto;max-height:85vh;margin:0 auto;
-      object-fit:cover;
-      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 95%);
-      mask-image: radial-gradient(ellipse at center, black 40%, transparent 95%);
+      width:85%;height:auto;max-height:88vh;margin:0 auto;
+      object-fit:contain;object-position:center bottom;
+      filter: drop-shadow(0 0 20px rgba(184, 134, 42, 0.4));
       display:block;
     }
     .hero-photo-glow{
@@ -857,8 +856,7 @@
       <div class="photo-side photo-side-right"></div>
       <div class="photo-glow"></div>
       <div class="photo-streaks"></div>
-      <img src="jayana-nova.jpg" alt="Jayana Ribeiro" loading="eager"/>
-      <div class="photo-vignette"></div>
+      <img src="jayana-nova.png" alt="Jayana Ribeiro" loading="eager"/>
       <div class="hero-photo-glow"></div>
     </div>
   </div>
